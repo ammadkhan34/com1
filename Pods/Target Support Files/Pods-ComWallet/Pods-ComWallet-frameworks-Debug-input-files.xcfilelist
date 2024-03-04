@@ -1,0 +1,18 @@
+${PODS_ROOT}/Target Support Files/Pods-ComWallet/Pods-ComWallet-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Bip39.swift/Bip39.framework
+${BUILT_PRODUCTS_DIR}/Blake2/Blake2.framework
+${BUILT_PRODUCTS_DIR}/CSecp256k1/CSecp256k1.framework
+${BUILT_PRODUCTS_DIR}/ContextCodable.swift/ContextCodable.framework
+${BUILT_PRODUCTS_DIR}/JsonRPC.swift/JsonRPC.framework
+${BUILT_PRODUCTS_DIR}/Numberick/Numberick.framework
+${BUILT_PRODUCTS_DIR}/Numberick-NBKCoreKit/NBKCoreKit.framework
+${BUILT_PRODUCTS_DIR}/Numberick-NBKDoubleWidthKit/NBKDoubleWidthKit.framework
+${BUILT_PRODUCTS_DIR}/ScaleCodec/ScaleCodec.framework
+${BUILT_PRODUCTS_DIR}/Serializable.swift/Serializable.framework
+${BUILT_PRODUCTS_DIR}/Sr25519/Sr25519.framework
+${BUILT_PRODUCTS_DIR}/Substrate/Substrate.framework
+${BUILT_PRODUCTS_DIR}/Substrate-Keychain/SubstrateKeychain.framework
+${BUILT_PRODUCTS_DIR}/Substrate-RPC/SubstrateRPC.framework
+${BUILT_PRODUCTS_DIR}/Tuples/Tuples.framework
+${BUILT_PRODUCTS_DIR}/UncommonCrypto/UncommonCrypto.framework
+${BUILT_PRODUCTS_DIR}/xxHash/xxHash.framework

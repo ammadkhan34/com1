@@ -1,0 +1,6 @@
+framework module Numberick {
+  umbrella header "Numberick-umbrella.h"
+
+  export *
+  module * { export * }
+}

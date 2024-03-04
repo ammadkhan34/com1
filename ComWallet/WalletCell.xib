@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="196" id="KGk-i7-Jjw" customClass="WalletCell" customModule="ComWallet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="472" height="196"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="472" height="196"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LG0-EV-b7w">
+                        <rect key="frame" x="0.0" y="0.0" width="472" height="196"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Commune" translatesAutoresizingMaskIntoConstraints="NO" id="Y0P-Su-ybX">
+                                <rect key="frame" x="15" y="136" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="60p-K2-0gp"/>
+                                    <constraint firstAttribute="height" constant="50" id="eFg-mc-l9J"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5Gn...g8GdX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4g-UC-uzf">
+                                <rect key="frame" x="85" y="150.66666666666666" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Op9-oI-l18"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="WBP-kA-GGo">
+                                <rect key="frame" x="429" y="154.66666666666666" width="28" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="BwF-Gk-p47"/>
+                                    <constraint firstAttribute="height" constant="13" id="Ep0-Ia-3qb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMf-Dp-mAg">
+                                <rect key="frame" x="15" y="10" width="59" height="106"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wMf-Dp-mAg" firstAttribute="top" secondItem="LG0-EV-b7w" secondAttribute="top" constant="10" id="3Bn-MH-MDO"/>
+                            <constraint firstItem="I4g-UC-uzf" firstAttribute="centerY" secondItem="Y0P-Su-ybX" secondAttribute="centerY" id="9Xt-uX-2Cf"/>
+                            <constraint firstItem="wMf-Dp-mAg" firstAttribute="leading" secondItem="LG0-EV-b7w" secondAttribute="leading" constant="15" id="DA4-46-Yv6"/>
+                            <constraint firstItem="WBP-kA-GGo" firstAttribute="leading" relation="lessThanOrEqual" secondItem="I4g-UC-uzf" secondAttribute="trailing" constant="244" id="FR9-Cz-xAz"/>
+                            <constraint firstItem="Y0P-Su-ybX" firstAttribute="leading" secondItem="wMf-Dp-mAg" secondAttribute="leading" id="JQ7-Jy-gbJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Y0P-Su-ybX" secondAttribute="bottom" constant="10" id="TP1-Zh-3sc"/>
+                            <constraint firstItem="I4g-UC-uzf" firstAttribute="leading" secondItem="Y0P-Su-ybX" secondAttribute="trailing" constant="20" id="VY9-Vn-a4e"/>
+                            <constraint firstItem="WBP-kA-GGo" firstAttribute="centerY" secondItem="I4g-UC-uzf" secondAttribute="centerY" id="niU-AF-Xtn"/>
+                            <constraint firstItem="Y0P-Su-ybX" firstAttribute="top" secondItem="wMf-Dp-mAg" secondAttribute="bottom" constant="20" id="u8u-Bx-TxC"/>
+                            <constraint firstAttribute="trailing" secondItem="WBP-kA-GGo" secondAttribute="trailing" constant="15" id="wVQ-Iv-1LF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="LG0-EV-b7w" secondAttribute="trailing" id="3Q3-Ux-Afg"/>
+                    <constraint firstAttribute="bottom" secondItem="LG0-EV-b7w" secondAttribute="bottom" id="7fv-YQ-98h"/>
+                    <constraint firstItem="LG0-EV-b7w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NDG-FZ-uRg"/>
+                    <constraint firstItem="LG0-EV-b7w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="o5S-qR-q9I"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <accessibility key="accessibilityConfiguration" identifier="WalletCell"/>
+            <point key="canvasLocation" x="135.87786259541986" y="73.239436619718319"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Commune" width="258" height="202"/>
+        <image name="eye" width="110" height="92"/>
+    </resources>
+</document>

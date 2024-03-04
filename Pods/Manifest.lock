@@ -1,0 +1,98 @@
+PODS:
+  - Bip39.swift (0.2.0):
+    - UncommonCrypto (~> 0.2.0)
+  - Blake2 (0.2.0)
+  - ContextCodable.swift (0.1.1)
+  - CSecp256k1 (0.2.0)
+  - JsonRPC.swift (0.2.3):
+    - ContextCodable.swift (~> 0.1.0)
+    - Tuples (~> 0.1.0)
+  - Numberick (0.16.0):
+    - Numberick-NBKCoreKit (= 0.16.0)
+    - Numberick-NBKDoubleWidthKit (= 0.16.0)
+  - Numberick-NBKCoreKit (0.16.0)
+  - Numberick-NBKDoubleWidthKit (0.16.0):
+    - Numberick-NBKCoreKit (= 0.16.0)
+  - ScaleCodec (0.3.1):
+    - Tuples (~> 0.1.0)
+  - Serializable.swift (0.3.1)
+  - Sr25519/CSr25519 (0.2.0):
+    - UncommonCrypto (~> 0.2.1)
+  - Sr25519/Ed25519 (0.2.0):
+    - Sr25519/CSr25519
+    - Sr25519/Helpers
+  - Sr25519/Helpers (0.2.0):
+    - Sr25519/CSr25519
+  - Sr25519/Sr25519 (0.2.0):
+    - Sr25519/CSr25519
+    - Sr25519/Helpers
+  - Substrate (0.1.0):
+    - Blake2 (~> 0.2.0)
+    - ContextCodable.swift (~> 0.1.0)
+    - Numberick (~> 0.16.0)
+    - ScaleCodec (~> 0.3.1)
+    - Serializable.swift (~> 0.3.1)
+    - Tuples (~> 0.1.0)
+    - xxHash (~> 0.1.0)
+  - Substrate-Keychain (0.1.0):
+    - Bip39.swift (~> 0.2.0)
+    - CSecp256k1 (~> 0.2.0)
+    - Sr25519/Ed25519 (~> 0.2.0)
+    - Sr25519/Sr25519 (~> 0.2.0)
+    - Substrate (= 0.1.0)
+    - UncommonCrypto (~> 0.2.0)
+  - Substrate-RPC (0.1.0):
+    - JsonRPC.swift (~> 0.2.3)
+    - Serializable.swift (~> 0.3.1)
+    - Substrate (= 0.1.0)
+  - Tuples (0.1.3)
+  - UncommonCrypto (0.2.1)
+  - xxHash (0.1.0)
+
+DEPENDENCIES:
+  - Substrate
+  - Substrate-Keychain
+  - Substrate-RPC
+
+SPEC REPOS:
+  trunk:
+    - Bip39.swift
+    - Blake2
+    - ContextCodable.swift
+    - CSecp256k1
+    - JsonRPC.swift
+    - Numberick
+    - Numberick-NBKCoreKit
+    - Numberick-NBKDoubleWidthKit
+    - ScaleCodec
+    - Serializable.swift
+    - Sr25519
+    - Substrate
+    - Substrate-Keychain
+    - Substrate-RPC
+    - Tuples
+    - UncommonCrypto
+    - xxHash
+
+SPEC CHECKSUMS:
+  Bip39.swift: f46ee4e1e05cfcbc020ae879b74bd0578fc7b440
+  Blake2: 216ae8c912a08356338645ad393e37818f877c75
+  ContextCodable.swift: 4fd1c3a9a3bb3e5f14e5339222f325494040012c
+  CSecp256k1: 2a59c03e52637ded98896a33be4b2649392cb843
+  JsonRPC.swift: d2a6d9b688e6bb1f2aa6808f61e6c8000cf5b717
+  Numberick: e6823c94b0b333f4a7aff8b5f967d4b116d736ab
+  Numberick-NBKCoreKit: a4b3c23cdb1a930207e28d6e1182aa8392f91151
+  Numberick-NBKDoubleWidthKit: 67bcf40ae5c50b7a1ad36f1a6e3fa66b91a3fbb6
+  ScaleCodec: 272c14379e30ba2457b6f3d3141539ba1cc5fb71
+  Serializable.swift: 8e22d67f78c63b6e8068a452b1e84f0aa807a1dc
+  Sr25519: 5343e4c6eed4ffc09fa6906e6b537f5c40a1090d
+  Substrate: c174659d7ee517ab8b8ab710f81e84925e360cfd
+  Substrate-Keychain: cc7624ec3e9351fd9a2ca539f64392cfd9bfde90
+  Substrate-RPC: 7f68ceb7a4e038782b77994a15c059efbed9781f
+  Tuples: 58fe2ee073bb674c9885b31450e32f78110f7446
+  UncommonCrypto: c9751cfec179986ec1fbd112f465036768e4fd67
+  xxHash: 5c1ca2f1a3588e5dd50312f636a8cd14bf115d3f
+
+PODFILE CHECKSUM: e8dc1cc9e5861be9bb23148ede8ba47d16ad5946
+
+COCOAPODS: 1.11.3

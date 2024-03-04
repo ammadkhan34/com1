@@ -1,0 +1,6 @@
+framework module Substrate {
+  umbrella header "Substrate-umbrella.h"
+
+  export *
+  module * { export * }
+}

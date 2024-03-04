@@ -1,0 +1,6 @@
+framework module SubstrateRPC {
+  umbrella header "Substrate-RPC-umbrella.h"
+
+  export *
+  module * { export * }
+}

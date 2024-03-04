@@ -1,0 +1,6 @@
+framework module NBKCoreKit {
+  umbrella header "Numberick-NBKCoreKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

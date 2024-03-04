@@ -1,0 +1,6 @@
+framework module NBKDoubleWidthKit {
+  umbrella header "Numberick-NBKDoubleWidthKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

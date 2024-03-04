@@ -1,0 +1,6 @@
+framework module ContextCodable {
+  umbrella header "ContextCodable.swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

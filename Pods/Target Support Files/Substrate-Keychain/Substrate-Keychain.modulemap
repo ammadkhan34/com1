@@ -1,0 +1,6 @@
+framework module SubstrateKeychain {
+  umbrella header "Substrate-Keychain-umbrella.h"
+
+  export *
+  module * { export * }
+}
