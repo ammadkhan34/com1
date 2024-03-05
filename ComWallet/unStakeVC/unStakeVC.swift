@@ -10,6 +10,13 @@ import UIKit
 class unStakeVC: UIViewController {
 
     @IBOutlet weak var stakeBalanceText: UILabel!
+    
+    static func unStakeVC() -> unStakeVC{
+        let storyboard = UIStoryboard.init(name: "unStakeVC", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "unStakeVC") as! unStakeVC
+        return view
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let text1 = "Staked balance: 10 COM"
@@ -31,9 +38,10 @@ class unStakeVC: UIViewController {
     
     @IBAction func validationVC(_ sender: Any) {
        // validatorVC
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "validatorVC") as! validatorVC
-         navigationController?.pushViewController(vc,
-         animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "validatorVC") as! validatorVC
+//         navigationController?.pushViewController(vc,
+//         animated: true)
+        self.navigationController?.pushViewController(validatorVC.validatorVC(), animated: true)
     }
 }

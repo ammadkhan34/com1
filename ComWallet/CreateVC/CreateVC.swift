@@ -55,6 +55,15 @@ class CreateVC: UIViewController {
     
     @IBOutlet weak var mnemonicLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    
+    
+    static func CreateVC() -> CreateVC{
+        let storyboard = UIStoryboard.init(name: "CreateVC", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "CreateVC") as! CreateVC
+        return view
+    }
+
+    
     override func viewDidLoad() {
           super.viewDidLoad()
         if eyeImg != nil {

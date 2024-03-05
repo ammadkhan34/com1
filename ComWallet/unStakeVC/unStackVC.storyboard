@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Un StakeVC-->
+        <scene sceneID="A7l-0V-jfy">
+            <objects>
+                <viewController storyboardIdentifier="unStakeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YLc-Up-EpS" customClass="unStakeVC" customModule="ComWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xoP-PF-oVu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXs-Cu-aHh">
+                                <rect key="frame" x="60" y="658" width="273" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PN0-ry-GLZ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Unstake">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="validationVC:" destination="YLc-Up-EpS" eventType="touchUpInside" id="r9b-D9-ONa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock your COMs by unstaking them, making them available for transfers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2o-cT-K8J">
+                                <rect key="frame" x="20" y="135" width="353" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unstake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3S-Lt-ege">
+                                <rect key="frame" x="140" y="89" width="113" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZZ-Za-cbA">
+                                <rect key="frame" x="142" y="276.33333333333331" width="109" height="214"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="179"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staked balance: 10 COM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBP-Fm-qpK">
+                                <rect key="frame" x="72.666666666666686" y="490.33333333333331" width="248" height="25.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="xI8-ha-Lwe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="25D-bv-bTg"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="L2o-cT-K8J" firstAttribute="leading" secondItem="25D-bv-bTg" secondAttribute="leading" constant="20" id="03p-hr-giX"/>
+                            <constraint firstItem="IBP-Fm-qpK" firstAttribute="top" secondItem="sZZ-Za-cbA" secondAttribute="bottom" id="DUB-2r-BPj"/>
+                            <constraint firstItem="25D-bv-bTg" firstAttribute="trailing" secondItem="L2o-cT-K8J" secondAttribute="trailing" constant="20" id="T3Z-5p-ldX"/>
+                            <constraint firstItem="L2o-cT-K8J" firstAttribute="top" secondItem="m3S-Lt-ege" secondAttribute="bottom" constant="10" id="VYK-Le-2TX"/>
+                            <constraint firstItem="m3S-Lt-ege" firstAttribute="centerX" secondItem="xoP-PF-oVu" secondAttribute="centerX" id="hd1-1u-Mtr"/>
+                            <constraint firstItem="m3S-Lt-ege" firstAttribute="top" secondItem="25D-bv-bTg" secondAttribute="top" constant="30" id="iNq-BX-wgY"/>
+                            <constraint firstItem="25D-bv-bTg" firstAttribute="bottom" secondItem="dXs-Cu-aHh" secondAttribute="bottom" constant="100" id="jyr-ce-rBh"/>
+                            <constraint firstItem="dXs-Cu-aHh" firstAttribute="leading" secondItem="25D-bv-bTg" secondAttribute="leading" constant="60" id="ony-2d-CHk"/>
+                            <constraint firstItem="IBP-Fm-qpK" firstAttribute="centerX" secondItem="xoP-PF-oVu" secondAttribute="centerX" id="pAX-QT-zil"/>
+                            <constraint firstItem="25D-bv-bTg" firstAttribute="trailing" secondItem="dXs-Cu-aHh" secondAttribute="trailing" constant="60" id="rGZ-wW-MeQ"/>
+                            <constraint firstItem="sZZ-Za-cbA" firstAttribute="centerY" secondItem="xoP-PF-oVu" secondAttribute="centerY" multiplier="0.9" id="xTT-g2-g7C"/>
+                            <constraint firstItem="sZZ-Za-cbA" firstAttribute="centerX" secondItem="xoP-PF-oVu" secondAttribute="centerX" id="yl1-gN-qsM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stakeBalanceText" destination="IBP-Fm-qpK" id="c2r-1E-r7A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCE-Yx-6Hj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7170" y="-161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

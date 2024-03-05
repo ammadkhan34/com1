@@ -11,6 +11,15 @@ class validatorVC: UIViewController {
 
     @IBOutlet weak var stakeBalanceText: UILabel!
     @IBOutlet weak var stakeText: UILabel!
+    
+    
+    static func validatorVC() -> validatorVC{
+        let storyboard = UIStoryboard.init(name: "validatorVC", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "validatorVC") as! validatorVC
+        return view
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let text = "Search validators to find the highest stake COM APY (Annual Percentage Yield)."

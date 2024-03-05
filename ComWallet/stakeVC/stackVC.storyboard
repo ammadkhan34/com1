@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--StakeVC-->
+        <scene sceneID="3ag-pp-yuE">
+            <objects>
+                <viewController storyboardIdentifier="stakeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v1J-BK-P3Z" customClass="stakeVC" customModule="ComWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iay-v4-OmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqb-gc-vjm">
+                                <rect key="frame" x="60" y="658" width="273" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vuf-qF-gR6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Stake">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="unstake:" destination="v1J-BK-P3Z" eventType="touchUpInside" id="5M5-Xq-yfW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stake your COMs and enjoy a current annual percentage yield (APY) of 50%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMx-Rh-KXN">
+                                <rect key="frame" x="20" y="135" width="353" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPL-3I-RYa">
+                                <rect key="frame" x="157.66666666666666" y="89" width="77.666666666666657" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQC-2y-V8H">
+                                <rect key="frame" x="142" y="276.33333333333331" width="109" height="214"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="179"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staked balance: 10 COM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ua-RE-EQt">
+                                <rect key="frame" x="72.666666666666686" y="490.33333333333331" width="248" height="25.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="mja-QX-6fQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hWo-ez-869"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="hWo-ez-869" firstAttribute="trailing" secondItem="VMx-Rh-KXN" secondAttribute="trailing" constant="20" id="0bc-jf-4Fw"/>
+                            <constraint firstItem="sQC-2y-V8H" firstAttribute="centerY" secondItem="Iay-v4-OmJ" secondAttribute="centerY" multiplier="0.9" id="18M-hk-qxC"/>
+                            <constraint firstItem="hWo-ez-869" firstAttribute="bottom" secondItem="uqb-gc-vjm" secondAttribute="bottom" constant="100" id="6BB-2e-W8w"/>
+                            <constraint firstItem="VMx-Rh-KXN" firstAttribute="top" secondItem="yPL-3I-RYa" secondAttribute="bottom" constant="10" id="947-he-Kdr"/>
+                            <constraint firstItem="uqb-gc-vjm" firstAttribute="leading" secondItem="hWo-ez-869" secondAttribute="leading" constant="60" id="9ug-Jn-omd"/>
+                            <constraint firstItem="VMx-Rh-KXN" firstAttribute="leading" secondItem="hWo-ez-869" secondAttribute="leading" constant="20" id="CYS-me-IlT"/>
+                            <constraint firstItem="5Ua-RE-EQt" firstAttribute="centerX" secondItem="Iay-v4-OmJ" secondAttribute="centerX" id="Vhr-f6-2H7"/>
+                            <constraint firstItem="yPL-3I-RYa" firstAttribute="top" secondItem="hWo-ez-869" secondAttribute="top" constant="30" id="W9s-QU-tmN"/>
+                            <constraint firstItem="sQC-2y-V8H" firstAttribute="centerX" secondItem="Iay-v4-OmJ" secondAttribute="centerX" id="dX5-wW-myJ"/>
+                            <constraint firstItem="5Ua-RE-EQt" firstAttribute="top" secondItem="sQC-2y-V8H" secondAttribute="bottom" id="f5U-WZ-3cO"/>
+                            <constraint firstItem="hWo-ez-869" firstAttribute="trailing" secondItem="uqb-gc-vjm" secondAttribute="trailing" constant="60" id="hxo-hO-hoD"/>
+                            <constraint firstItem="yPL-3I-RYa" firstAttribute="centerX" secondItem="Iay-v4-OmJ" secondAttribute="centerX" id="k8X-MV-eXh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stakeBalanceText" destination="5Ua-RE-EQt" id="e1w-5h-ery"/>
+                        <outlet property="stakeText" destination="VMx-Rh-KXN" id="g5o-FH-5En"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXE-Ke-Xp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6230" y="-129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

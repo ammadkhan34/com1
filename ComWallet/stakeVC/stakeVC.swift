@@ -13,6 +13,14 @@ class stakeVC: UIViewController {
    
     @IBOutlet weak var stakeBalanceText: UILabel!
     
+    static func stakeVC() -> stakeVC{
+        let storyboard = UIStoryboard.init(name: "stakeVC", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "stakeVC") as! stakeVC
+        return view
+    }
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let text = "Stake your COMs and enjoy a current annual percentage yield (APY) of 50%"
