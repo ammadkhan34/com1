@@ -8,14 +8,21 @@
 import UIKit
 
 class DetailsVC: UIViewController {
-
+    var transactionData: TransactionData?
+    @IBOutlet weak var noTransactionImage: UIImageView!
+    @IBOutlet weak var NoTransactionLabel: UILabel!
+    @IBOutlet weak var transactionsTable: UITableView!
     @IBOutlet weak var stackedBalance: UILabel!
     @IBOutlet weak var totalBalance: UILabel!
     @IBOutlet var optionsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         addRightSideShadow(to: optionsView)
-        fetchJSONData()
+        fetchWalletData()
+        transactionsTable.register(UINib(nibName: "TransactionCell", bundle: nil), forCellReuseIdentifier: "TransactionCell")
+        transactionsTable.dataSource = self
+        transactionsTable.delegate = self
+        fetchWalletTransactions()
         // Do any additional setup after loading the view.
     }
     
@@ -31,7 +38,38 @@ class DetailsVC: UIViewController {
             view.layer.cornerRadius = 12
         }
     
-    func fetchJSONData() {
+    
+    func fetchWalletTransactions() {
+        guard let url = URL(string: "https://api.explorer.comwallet.io/transactions/wallet/5GZBhMZZRMWCiqgqdDGZCGo16Kg5aUQUcpuUGWwSgHn9HbRC") else {
+            print("Invalid URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error fetching data: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+
+            do {
+                self.transactionData = try JSONDecoder().decode(TransactionData.self, from: data)
+                // Now you have access to transactionData which contains the decoded JSON data
+                if self.transactionData?.data.count ?? 0 > 0 {
+                    DispatchQueue.main.async {
+                        self.transactionsTable.isHidden = false
+                        self.NoTransactionLabel.isHidden = true
+                        self.noTransactionImage.isHidden = true
+                        self.transactionsTable.reloadData()
+                    }
+                }
+                print("Trans data is",self.transactionData)
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
+        }.resume()
+    }
+    
+    func fetchWalletData() {
         guard let url = URL(string: "https://api.comstats.org/balance/?wallet=5GZBhMZZRMWCiqgqdDGZCGo16Kg5aUQUcpuUGWwSgHn9HbRC") else {
             return
         }
@@ -73,4 +111,25 @@ print("Data is", data)
     }
     */
 
+}
+
+
+extension DetailsVC : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (transactionData?.data.count ?? 1) - 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = transactionsTable.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as? TransactionCell, let transactionData =  transactionData,transactionData.data.count != 0  {
+            print("Data here is",transactionData.data[indexPath.row])
+            cell.comPrice.text = transactionData.data[indexPath.row].fee
+            cell.dateAndTime.text = transactionData.data[indexPath.row].timestamp
+            cell.methodType.text = transactionData.data[indexPath.row].method
+            cell.comAmount.text = transactionData.data[indexPath.row].amount
+           return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
 }

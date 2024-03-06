@@ -9,6 +9,7 @@ import UIKit
 
 class CollectionCell: UICollectionViewCell {
     
+    @IBOutlet weak var collectionTextField: UITextField!
     @IBOutlet var myLabel: UILabel!
     @IBOutlet var myCell: NSLayoutConstraint!
 }

@@ -20,6 +20,8 @@
 		81D039802B4D9198007BB5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81D0397E2B4D9198007BB5A2 /* LaunchScreen.storyboard */; };
 		81D039882B4DC214007BB5A2 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D039872B4DC214007BB5A2 /* CollectionCell.swift */; };
 		81D0398E2B4DC36F007BB5A2 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0398D2B4DC36F007BB5A2 /* CreateVC.swift */; };
+		81DF14312B976268008B9C76 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DF142F2B976268008B9C76 /* TransactionCell.swift */; };
+		81DF14322B976268008B9C76 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DF14302B976268008B9C76 /* TransactionCell.xib */; };
 		81E536B42B77F0FC00123F1D /* stakeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E536B32B77F0FC00123F1D /* stakeVC.swift */; };
 		81E536B62B77F10C00123F1D /* unStakeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E536B52B77F10C00123F1D /* unStakeVC.swift */; };
 		81E536B82B77F12100123F1D /* validatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E536B72B77F12100123F1D /* validatorVC.swift */; };
@@ -45,6 +47,8 @@
 		81D039812B4D9198007BB5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81D039872B4DC214007BB5A2 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		81D0398D2B4DC36F007BB5A2 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
+		81DF142F2B976268008B9C76 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		81DF14302B976268008B9C76 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		81E536B32B77F0FC00123F1D /* stakeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stakeVC.swift; sourceTree = "<group>"; };
 		81E536B52B77F10C00123F1D /* unStakeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unStakeVC.swift; sourceTree = "<group>"; };
 		81E536B72B77F12100123F1D /* validatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validatorVC.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				81CC5CE02B78D803000B458E /* Send.swift */,
 				81BBAB902B950FD1009DFD11 /* WalletCell.swift */,
 				81BBAB912B950FD1009DFD11 /* WalletCell.xib */,
+				81DF142F2B976268008B9C76 /* TransactionCell.swift */,
+				81DF14302B976268008B9C76 /* TransactionCell.xib */,
 			);
 			path = ComWallet;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 				81D039802B4D9198007BB5A2 /* LaunchScreen.storyboard in Resources */,
 				81D0397D2B4D9198007BB5A2 /* Assets.xcassets in Resources */,
 				81D0397B2B4D9195007BB5A2 /* Main.storyboard in Resources */,
+				81DF14322B976268008B9C76 /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +253,7 @@
 				81D0398E2B4DC36F007BB5A2 /* CreateVC.swift in Sources */,
 				81E536B82B77F12100123F1D /* validatorVC.swift in Sources */,
 				81BBAB922B950FD1009DFD11 /* WalletCell.swift in Sources */,
+				81DF14312B976268008B9C76 /* TransactionCell.swift in Sources */,
 				81CC5CE12B78D803000B458E /* Send.swift in Sources */,
 				81D039762B4D9195007BB5A2 /* SceneDelegate.swift in Sources */,
 				81D039882B4DC214007BB5A2 /* CollectionCell.swift in Sources */,

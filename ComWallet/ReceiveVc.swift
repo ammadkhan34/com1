@@ -10,13 +10,19 @@ import UIKit
 class ReceiveVc: UIViewController {
 
     @IBOutlet weak var qrImage: UIImageView!
+    var qrText = ""
+    func setQRText(_ qrText: String) {
+        self.qrText = qrText
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let QRimage = generateQRCode(from: "Hello, world 23 45 we sd fr ew sw!")
+        let QRimage = generateQRCode(from: self.qrText)
         self.qrImage.image = QRimage
       //  self.QRView.image = QRimage
         // Do any additional setup after loading the view.
     }
+   
     
     func generateQRCode(from string: String) -> UIImage? {
         let data = string.data(using: String.Encoding.ascii)

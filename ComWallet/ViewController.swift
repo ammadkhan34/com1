@@ -34,6 +34,33 @@ struct Validator: Decodable {
     }
 }
 
+
+
+
+
+struct TransactionData: Codable {
+    let data: [Transaction]
+    let total: Int
+    let page: Int
+    let limit: Int
+    let lastPage: Int
+}
+
+struct Transaction: Codable {
+    let id: Int
+    let timestamp: String
+    let method: String
+    let sender: String
+    let receiver: String
+    let amount: String
+    let blockNumber: Int
+    let isSigned: Bool
+    let hash: String
+    let nonce: Int
+    let fee: String
+}
+
+
 struct Stake: Decodable {
     let validator: Validator?
     let amount: Int?
@@ -47,13 +74,14 @@ struct ResponseData: Decodable {
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var transactionsTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         transactionsTable.dataSource = self
         transactionsTable.delegate = self
         transactionsTable.register(UINib(nibName: "WalletCell", bundle: nil), forCellReuseIdentifier: "WalletCell")
-
+//fetchJSONData()
        // .register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
 //        let mnemonic = try! Bip39.Wordlist(words: ["","",""])
 //        print("Mnemonic phrase: \(mnemonic)")
@@ -82,30 +110,8 @@ class ViewController: UIViewController {
          animated: true)
     }
  
-    func createPolkadotWallet() {
-       // importWallet(<#T##Any#>)
-        guard let mnemonic = try? Mnemonic() else {
-                    showAlert(message: "Error generating mnemonic phrase")
-                    return
-                }
-        
-        
-        print("Mnemonic is", mnemonic.mnemonic())
-        let seed = Data(mnemonic.substrate_seed())
-                // Convert mnemonic phrase to seed
-              
-           do {
-               // Generate a new key pair using Substrate
-               let keyPair = try Sr25519KeyPair(seed: seed)
-               let address = try keyPair.publicKey.ss58(format: .substrate)
-             print(address)
-               showAlert(message: "Your Polkadot wallet address is \(address)")
-           } catch {
-               // Handle error
-               print("Error creating Polkadot wallet: \(error.localizedDescription)")
-               showAlert(message: "Error creating Polkadot wallet. Please try again.")
-           }
-       }
+    
+    
     
     
     
