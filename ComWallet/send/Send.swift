@@ -9,6 +9,14 @@ import UIKit
 
 class Send: UIViewController {
 
+    
+    static func Send() -> Send{
+        let storyboard = UIStoryboard.init(name: "Send", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "Send") as! Send
+        return view
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

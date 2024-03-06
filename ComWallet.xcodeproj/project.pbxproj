@@ -24,6 +24,7 @@
 		81E536B62B77F10C00123F1D /* unStakeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E536B52B77F10C00123F1D /* unStakeVC.swift */; };
 		81E536B82B77F12100123F1D /* validatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E536B72B77F12100123F1D /* validatorVC.swift */; };
 		A3458EE5EA206C26AC97AEDF /* Pods_ComWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3594428E03AAD86B8A20F2AA /* Pods_ComWallet.framework */; };
+		B11D08E62B98A8FC008B33C5 /* send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11D08E52B98A8FC008B33C5 /* send.storyboard */; };
 		B14F55872B96C87900529049 /* CreateVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F55862B96C87900529049 /* CreateVC.storyboard */; };
 		B14F558A2B96C92200529049 /* DetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F55892B96C92200529049 /* DetailsVC.storyboard */; };
 		B14F558D2B96C9B500529049 /* unStackVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F558C2B96C9B500529049 /* unStackVC.storyboard */; };
@@ -52,6 +53,7 @@
 		81E536B32B77F0FC00123F1D /* stakeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stakeVC.swift; sourceTree = "<group>"; };
 		81E536B52B77F10C00123F1D /* unStakeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unStakeVC.swift; sourceTree = "<group>"; };
 		81E536B72B77F12100123F1D /* validatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validatorVC.swift; sourceTree = "<group>"; };
+		B11D08E52B98A8FC008B33C5 /* send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = send.storyboard; sourceTree = "<group>"; };
 		B14F55862B96C87900529049 /* CreateVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateVC.storyboard; sourceTree = "<group>"; };
 		B14F55892B96C92200529049 /* DetailsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsVC.storyboard; sourceTree = "<group>"; };
 		B14F558C2B96C9B500529049 /* unStackVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = unStackVC.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		81D039722B4D9195007BB5A2 /* ComWallet */ = {
 			isa = PBXGroup;
 			children = (
+				B11D08E42B98A8E9008B33C5 /* send */,
 				B14F558E2B96CA2200529049 /* stakeVC */,
 				B14F558B2B96C98C00529049 /* unStakeVC */,
 				B14F55882B96C91300529049 /* DetailsVC */,
@@ -114,11 +117,19 @@
 				81D039872B4DC214007BB5A2 /* CollectionCell.swift */,
 				81BDD8E92B501C400043333F /* ReceiveVc.swift */,
 				81E536B72B77F12100123F1D /* validatorVC.swift */,
-				81CC5CE02B78D803000B458E /* Send.swift */,
 				81BBAB902B950FD1009DFD11 /* WalletCell.swift */,
 				81BBAB912B950FD1009DFD11 /* WalletCell.xib */,
 			);
 			path = ComWallet;
+			sourceTree = "<group>";
+		};
+		B11D08E42B98A8E9008B33C5 /* send */ = {
+			isa = PBXGroup;
+			children = (
+				81CC5CE02B78D803000B458E /* Send.swift */,
+				B11D08E52B98A8FC008B33C5 /* send.storyboard */,
+			);
+			path = send;
 			sourceTree = "<group>";
 		};
 		B14F55852B96C85500529049 /* CreateVC */ = {
@@ -230,6 +241,7 @@
 				81BBAB932B950FD1009DFD11 /* WalletCell.xib in Resources */,
 				B14F558D2B96C9B500529049 /* unStackVC.storyboard in Resources */,
 				81D039802B4D9198007BB5A2 /* LaunchScreen.storyboard in Resources */,
+				B11D08E62B98A8FC008B33C5 /* send.storyboard in Resources */,
 				81D0397D2B4D9198007BB5A2 /* Assets.xcassets in Resources */,
 				B14F558A2B96C92200529049 /* DetailsVC.storyboard in Resources */,
 				81D0397B2B4D9195007BB5A2 /* Main.storyboard in Resources */,
