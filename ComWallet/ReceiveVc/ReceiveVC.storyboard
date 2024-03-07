@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ReceiveVc-->
+        <scene sceneID="TZG-sh-LDJ">
+            <objects>
+                <viewController storyboardIdentifier="ReceiveVC" title="ReceiveVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gRU-0e-ey6" customClass="ReceiveVC" customModule="ComWallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0mi-sg-EEv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr" translatesAutoresizingMaskIntoConstraints="NO" id="CVc-ic-Jv6">
+                                <rect key="frame" x="76.666666666666686" y="254.66666666666663" width="240" height="172"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="6OP-LQ-zC5"/>
+                                    <constraint firstAttribute="height" constant="172" id="oSG-2A-He5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YR5-ju-cjE">
+                                <rect key="frame" x="142.66666666666666" y="79" width="107.66666666666666" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0x0x 0x0x 0x0x0x0x 0x0x 0x0x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1h-fe-wIX">
+                                <rect key="frame" x="76.666666666666686" y="185.66666666666666" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan qr code or tap to copy your wallet address to receive $COM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSa-Ga-dsl">
+                                <rect key="frame" x="20" y="135" width="353" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HaN-5y-dnN"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x1h-fe-wIX" firstAttribute="centerX" secondItem="0mi-sg-EEv" secondAttribute="centerX" id="157-rS-6Ea"/>
+                            <constraint firstItem="YR5-ju-cjE" firstAttribute="top" secondItem="HaN-5y-dnN" secondAttribute="top" constant="20" id="L4E-PY-dP5"/>
+                            <constraint firstItem="QSa-Ga-dsl" firstAttribute="top" secondItem="YR5-ju-cjE" secondAttribute="bottom" constant="20" id="Lob-l0-XpR"/>
+                            <constraint firstItem="CVc-ic-Jv6" firstAttribute="centerY" secondItem="0mi-sg-EEv" secondAttribute="centerY" multiplier="0.8" id="NcK-Gy-Qph"/>
+                            <constraint firstItem="YR5-ju-cjE" firstAttribute="centerX" secondItem="0mi-sg-EEv" secondAttribute="centerX" id="U3t-uW-lnT"/>
+                            <constraint firstItem="QSa-Ga-dsl" firstAttribute="leading" secondItem="HaN-5y-dnN" secondAttribute="leading" constant="20" id="WgG-yX-mgY"/>
+                            <constraint firstItem="HaN-5y-dnN" firstAttribute="trailing" secondItem="QSa-Ga-dsl" secondAttribute="trailing" constant="20" id="c5h-7y-chx"/>
+                            <constraint firstItem="CVc-ic-Jv6" firstAttribute="centerX" secondItem="0mi-sg-EEv" secondAttribute="centerX" id="xqU-LV-2vH"/>
+                            <constraint firstItem="x1h-fe-wIX" firstAttribute="top" secondItem="QSa-Ga-dsl" secondAttribute="bottom" constant="10" id="zPH-mc-bEN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="qrImage" destination="CVc-ic-Jv6" id="TkC-2J-kf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyN-Ax-vzi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1216" y="1449"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="qr" width="234" height="246"/>
+    </resources>
+</document>

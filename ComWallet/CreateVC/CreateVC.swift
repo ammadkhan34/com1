@@ -104,12 +104,12 @@ class CreateVC: UIViewController {
 //        eyeImg.isHidden = false
 //        mainView.alpha = 0.3
 //        mnemonicLabel.isHidden = false
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReceiveVc") as! ReceiveVc
-         navigationController?.pushViewController(vc,
-         animated: true)
+        self.navigationController?.pushViewController(ReceiveVC.ReceiveVC(), animated: true)
     }
     
+    @IBAction func importWallet(_ sender: Any) {
+        self.navigationController?.pushViewController(ReceiveVC.ReceiveVC(), animated: true)
+    }
     // Function to calculate the item size based on the collection view width and the number of items per row
     private func calculateItemSize() -> CGSize {
             if let collectionView = collectionView {

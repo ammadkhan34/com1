@@ -65,10 +65,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func createWallet(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CreateVC") as! CreateVC
-         navigationController?.pushViewController(vc,
-         animated: true)
+        self.navigationController?.pushViewController(CreateVC.CreateVC(), animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "CreateVC") as! CreateVC
+//         navigationController?.pushViewController(vc,
+//         animated: true)
     }
     
     

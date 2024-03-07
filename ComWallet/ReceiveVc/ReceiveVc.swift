@@ -7,9 +7,19 @@
 
 import UIKit
 
-class ReceiveVc: UIViewController {
+class ReceiveVC: UIViewController {
 
     @IBOutlet weak var qrImage: UIImageView!
+    
+    
+    
+    static func ReceiveVC() -> ReceiveVC{
+        let storyboard = UIStoryboard.init(name: "ReceiveVC", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "ReceiveVC") as! ReceiveVC
+        return view
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let QRimage = generateQRCode(from: "Hello, world 23 45 we sd fr ew sw!")

@@ -13,7 +13,7 @@
         <!--CreateVC-->
         <scene sceneID="hX8-01-8GE">
             <objects>
-                <viewController id="nEL-1f-0Ba" customClass="CreateVC" customModule="ComWallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nEL-1f-0Ba" customClass="CreateVC" customModule="ComWallet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7bv-hb-mja">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,10 +75,12 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="importWallet:" destination="nEL-1f-0Ba" eventType="touchUpInside" id="b2y-DS-Iiq"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here is your mnemonic seed phrase dont show anyone or backup" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJw-94-VyB">
-                                <rect key="frame" x="-32" y="103" width="497" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is your mnemonic seed phrase dont show anyone or backup" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJw-94-VyB">
+                                <rect key="frame" x="30" y="130" width="333" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -96,9 +98,12 @@
                             <constraint firstItem="TUo-36-GLC" firstAttribute="bottom" secondItem="Rj0-TK-lCy" secondAttribute="bottom" constant="100" id="8mD-3z-Sz3"/>
                             <constraint firstItem="g9B-TJ-fCm" firstAttribute="top" secondItem="TUo-36-GLC" secondAttribute="top" constant="30" id="CH7-RA-tMw"/>
                             <constraint firstItem="g9B-TJ-fCm" firstAttribute="centerX" secondItem="7bv-hb-mja" secondAttribute="centerX" id="Ks7-ye-gQt"/>
+                            <constraint firstItem="TUo-36-GLC" firstAttribute="trailing" secondItem="BJw-94-VyB" secondAttribute="trailing" constant="30" id="OjK-DJ-V7e"/>
                             <constraint firstItem="Rj0-TK-lCy" firstAttribute="leading" secondItem="TUo-36-GLC" secondAttribute="leading" constant="60" id="Y6b-yf-Q33"/>
                             <constraint firstItem="DaQ-Uo-4nn" firstAttribute="leading" secondItem="TUo-36-GLC" secondAttribute="leading" constant="20" id="b6r-Kt-IZm"/>
                             <constraint firstItem="Rj0-TK-lCy" firstAttribute="centerX" secondItem="DaQ-Uo-4nn" secondAttribute="centerX" id="f1j-Ix-TXB"/>
+                            <constraint firstItem="BJw-94-VyB" firstAttribute="top" secondItem="g9B-TJ-fCm" secondAttribute="bottom" constant="20" id="lNf-BC-waR"/>
+                            <constraint firstItem="BJw-94-VyB" firstAttribute="leading" secondItem="TUo-36-GLC" secondAttribute="leading" constant="30" id="nsk-so-AKD"/>
                             <constraint firstItem="DaQ-Uo-4nn" firstAttribute="centerY" secondItem="7bv-hb-mja" secondAttribute="centerY" id="o6I-MZ-c5d"/>
                             <constraint firstItem="TUo-36-GLC" firstAttribute="trailing" secondItem="DaQ-Uo-4nn" secondAttribute="trailing" constant="20" id="owz-Bg-1mi"/>
                         </constraints>
@@ -109,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnM-Mz-CeS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448" y="688"/>
+            <point key="canvasLocation" x="1446.5648854961833" y="687.32394366197184"/>
         </scene>
     </scenes>
     <resources>
