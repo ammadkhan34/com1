@@ -12,46 +12,6 @@ import Bip39
 import CoreImage.CIFilterBuiltins
 import SubstrateKeychain
 
-//
-//class CreateVC: UIViewController {
-//    let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-//       var items = ["secret","secret","secret","secret","secret","secret","secret","secret","secret" ]
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
-//
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
-//}
-//
-//extension CreateVC: UICollectionViewDelegate,UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.items.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionCell
-//
-//               // Use the outlet in our custom class to get a reference to the UILabel in the cell
-//        cell.myLabel.text = self.items[indexPath.row] // The row value is the same as the index of the desired text within the array.
-//               cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-//        cell.layer.borderColor = UIColor.black.cgColor
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 8
-//               return cell
-//    }
-//}
 class CreateVC: UIViewController {
     
     @IBOutlet weak var eyeImg: UIImageView!
@@ -121,12 +81,9 @@ class CreateVC: UIViewController {
         navigationController?.pushViewController(vc,animated: true)
     }
     
-    @IBAction func importAction(_ sender: Any) {
-        self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
-    }
-    
     @IBAction func importWallet(_ sender: Any) {
-        self.navigationController?.pushViewController(ReceiveVC.ReceiveVC(), animated: true)
+        importWallet()
+        //self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
     }
     
 }
@@ -135,11 +92,23 @@ extension CreateVC{
     func importWallet() {
        do {
            
-           let seed = Data(try Mnemonic(mnemonic: ["siege", "argue", "shell", "flavor", "ranch", "staff", "reform", "trust", "ramp", "differ", "enrich", "destroy"], wordlist: .english).substrate_seed())
+           let seed = Data(try Mnemonic(mnemonic: [    word1?.text ?? "",
+                                                       word2?.text ?? "",
+                                                       word3?.text ?? "",
+                                                       word4?.text ?? "",
+                                                       word5?.text ?? "",
+                                                       word6?.text ?? "",
+                                                       word7?.text ?? "",
+                                                       word8?.text ?? "",
+                                                       word9?.text ?? "",
+                                                       word10?.text ?? "",
+                                                       word11?.text ?? "",
+                                                       word12?.text ?? ""], wordlist: .english).substrate_seed())
            // Generate a new key pair using Substrate
            let keyPair = try Sr25519KeyPair(seed: seed)
            let address = try keyPair.publicKey.ss58(format: .substrate)
          print(address)
+           self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
            showAlert(message: "Your Polkadot wallet address is \(address)")
        } catch {
            // Handle error

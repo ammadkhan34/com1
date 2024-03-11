@@ -115,7 +115,6 @@
 				B14F558E2B96CA2200529049 /* stakeVC */,
 				B14F558B2B96C98C00529049 /* unStakeVC */,
 				B14F55882B96C91300529049 /* DetailsVC */,
-				B14F55852B96C85500529049 /* CreateVC */,
 				81D039732B4D9195007BB5A2 /* AppDelegate.swift */,
 				81D039752B4D9195007BB5A2 /* SceneDelegate.swift */,
 				81D039772B4D9195007BB5A2 /* ViewController.swift */,
@@ -137,13 +136,6 @@
 				B11D08E52B98A8FC008B33C5 /* send.storyboard */,
 			);
 			path = send;
-			sourceTree = "<group>";
-		};
-		B14F55852B96C85500529049 /* CreateVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CreateVC;
 			sourceTree = "<group>";
 		};
 		B14F55882B96C91300529049 /* DetailsVC */ = {
