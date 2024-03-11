@@ -6,6 +6,12 @@
 ////
 //
 import UIKit
+import Substrate
+import SubstrateRPC
+import Bip39
+import CoreImage.CIFilterBuiltins
+import SubstrateKeychain
+
 //
 //class CreateVC: UIViewController {
 //    let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
@@ -47,128 +53,105 @@ import UIKit
 //    }
 //}
 class CreateVC: UIViewController {
-    let reuseIdentifier = "cell"
-    var items = ["secret", "secret", "secret", "secret", "secret", "secret", "secret", "secret", "secret"]
     
     @IBOutlet weak var eyeImg: UIImageView!
     @IBOutlet weak var mainView: UIView!
     
-    @IBOutlet weak var mnemonicLabel: UILabel!
-    @IBOutlet var collectionView: UICollectionView!
     
+    @IBOutlet weak var word1: UITextField!
+    
+    @IBOutlet weak var word2: UITextField!
+    
+    @IBOutlet weak var word3: UITextField!
+    
+    @IBOutlet weak var word4: UITextField!
+    
+    @IBOutlet weak var word5: UITextField!
+    
+    @IBOutlet weak var word6: UITextField!
+    
+    @IBOutlet weak var word7: UITextField!
+    
+    @IBOutlet weak var word8: UITextField!
+    
+    @IBOutlet weak var word9: UITextField!
+    
+    @IBOutlet weak var word10: UITextField!
+    
+    @IBOutlet weak var word11: UITextField!
+    
+    @IBOutlet weak var word12: UITextField!
     
     static func CreateVC() -> CreateVC{
         let storyboard = UIStoryboard.init(name: "CreateVC", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "CreateVC") as! CreateVC
         return view
     }
-
+    
     
     override func viewDidLoad() {
-          super.viewDidLoad()
+        super.viewDidLoad()
         if eyeImg != nil {
             eyeImg.isHidden = false
             mainView.alpha = 0.3
-            mnemonicLabel.isHidden = false
             
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
             eyeImg.isUserInteractionEnabled = true
             eyeImg.addGestureRecognizer(tapGesture)
         }
-         
-       
-        collectionView.backgroundColor = .black
+        
+        
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.backItem?.backButtonTitle = ""
-                // Remove back button text
-                navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-          // Do any additional setup after loading the view.
-      }
-    // ... Other code ...
-
+        // Remove back button text
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        // Do any additional setup after loading the view.
+    }
+    
     @objc func imageViewTapped() {
         // Perform transition animation here
         eyeImg.isHidden = true
         mainView.alpha = 1.0
-        mnemonicLabel.isHidden = true
     }
+    
     @IBAction func sendVc(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Send") as! Send
-         navigationController?.pushViewController(vc,
-         animated: true)
+        navigationController?.pushViewController(vc,animated: true)
     }
     
     @IBAction func importAction(_ sender: Any) {
-//        eyeImg.isHidden = false
-//        mainView.alpha = 0.3
-//        mnemonicLabel.isHidden = false
         self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
     }
     
     @IBAction func importWallet(_ sender: Any) {
         self.navigationController?.pushViewController(ReceiveVC.ReceiveVC(), animated: true)
     }
-    // Function to calculate the item size based on the collection view width and the number of items per row
-    private func calculateItemSize() -> CGSize {
-            if let collectionView = collectionView {
-                let spacing: CGFloat = 10
-                let itemsPerRow: CGFloat = 3
-                let totalSpacing = (itemsPerRow - 1) * spacing
-                let availableWidth = collectionView.frame.width - totalSpacing
-                let width = (availableWidth / itemsPerRow)*1.8
-                let height = width/5 // You can adjust the height as needed
+    
+}
 
-                return CGSize(width: width/2, height: height)
-            } else {
-                return CGSize(width: 0, height: 0)
-            }
-        }
+extension CreateVC{
+    func importWallet() {
+       do {
+           
+           let seed = Data(try Mnemonic(mnemonic: ["siege", "argue", "shell", "flavor", "ranch", "staff", "reform", "trust", "ramp", "differ", "enrich", "destroy"], wordlist: .english).substrate_seed())
+           // Generate a new key pair using Substrate
+           let keyPair = try Sr25519KeyPair(seed: seed)
+           let address = try keyPair.publicKey.ss58(format: .substrate)
+         print(address)
+           showAlert(message: "Your Polkadot wallet address is \(address)")
+       } catch {
+           // Handle error
+           print("Error creating Polkadot wallet: \(error.localizedDescription)")
+           showAlert(message: "Error creating Polkadot wallet. Please try again.")
+       }
+    }
+    
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Polkadot Wallet Created", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 
-    extension CreateVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return items.count
-        }
-
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionCell
-            cell.myLabel.text = "secret"
-            cell.myLabel.textColor = UIColor.lightGray
-            // Configure the cell with a rectangle and circular edges
-            cell.backgroundColor = UIColor.white
-            cell.layer.cornerRadius = 20 // Adjust the corner radius to make it circular
-            cell.layer.borderColor = UIColor.lightGray.cgColor
-            cell.layer.borderWidth = 1
-
-            return cell
-        }
-
-        // Function to calculate the item size based on the collection view width and the number of items per row
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return calculateItemSize()
-        }
-        
-        
-    }
-@IBDesignable
-class CustomButton: UIButton {
-    @IBInspectable var cornerRadiusValue: CGFloat = 10.0 {
-        didSet {
-            setUpView()
-        }
-    }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setUpView()
-    }
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setUpView()
-    }
-    func setUpView() {
-        self.layer.cornerRadius = self.cornerRadiusValue
-        self.clipsToBounds = true
-    }
 }

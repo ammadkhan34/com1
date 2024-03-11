@@ -10,5 +10,4 @@ import UIKit
 class CollectionCell: UICollectionViewCell {
     
     @IBOutlet var myLabel: UILabel!
-    @IBOutlet var myCell: NSLayoutConstraint!
 }

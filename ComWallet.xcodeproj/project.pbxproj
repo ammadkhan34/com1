@@ -29,6 +29,8 @@
 		B14F558D2B96C9B500529049 /* unStackVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F558C2B96C9B500529049 /* unStackVC.storyboard */; };
 		B14F55902B96CA3B00529049 /* stackVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F558F2B96CA3B00529049 /* stackVC.storyboard */; };
 		B179D5552B9F32DF007626EA /* DetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B179D5542B9F32DF007626EA /* DetailsVC.storyboard */; };
+		B199C4742B9F7A82001C7126 /* CreateVC1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B199C4732B9F7A82001C7126 /* CreateVC1.storyboard */; };
+		B199C4762B9F7BF5001C7126 /* CreateVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199C4752B9F7BF5001C7126 /* CreateVC1.swift */; };
 		B1F0837F2B99E42300AD5E21 /* ReceiveVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F0837E2B99E42300AD5E21 /* ReceiveVC.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		B14F558C2B96C9B500529049 /* unStackVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = unStackVC.storyboard; sourceTree = "<group>"; };
 		B14F558F2B96CA3B00529049 /* stackVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = stackVC.storyboard; sourceTree = "<group>"; };
 		B179D5542B9F32DF007626EA /* DetailsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsVC.storyboard; sourceTree = "<group>"; };
+		B199C4732B9F7A82001C7126 /* CreateVC1.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateVC1.storyboard; sourceTree = "<group>"; };
+		B199C4752B9F7BF5001C7126 /* CreateVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC1.swift; sourceTree = "<group>"; };
 		B1F0837E2B99E42300AD5E21 /* ReceiveVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReceiveVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +123,6 @@
 				81D0397C2B4D9198007BB5A2 /* Assets.xcassets */,
 				81D0397E2B4D9198007BB5A2 /* LaunchScreen.storyboard */,
 				81D039812B4D9198007BB5A2 /* Info.plist */,
-				81D039872B4DC214007BB5A2 /* CollectionCell.swift */,
 				81E536B72B77F12100123F1D /* validatorVC.swift */,
 				81BBAB902B950FD1009DFD11 /* WalletCell.swift */,
 				81BBAB912B950FD1009DFD11 /* WalletCell.xib */,
@@ -182,6 +185,9 @@
 		B179D5502B9F3261007626EA /* createWallet */ = {
 			isa = PBXGroup;
 			children = (
+				81D039872B4DC214007BB5A2 /* CollectionCell.swift */,
+				B199C4732B9F7A82001C7126 /* CreateVC1.storyboard */,
+				B199C4752B9F7BF5001C7126 /* CreateVC1.swift */,
 			);
 			path = createWallet;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			files = (
 				B14F55902B96CA3B00529049 /* stackVC.storyboard in Resources */,
 				B1F0837F2B99E42300AD5E21 /* ReceiveVC.storyboard in Resources */,
+				B199C4742B9F7A82001C7126 /* CreateVC1.storyboard in Resources */,
 				B14F55872B96C87900529049 /* CreateVC.storyboard in Resources */,
 				81BBAB932B950FD1009DFD11 /* WalletCell.xib in Resources */,
 				B14F558D2B96C9B500529049 /* unStackVC.storyboard in Resources */,
@@ -332,6 +339,7 @@
 				81BDD8EA2B501C400043333F /* ReceiveVc.swift in Sources */,
 				81D039742B4D9195007BB5A2 /* AppDelegate.swift in Sources */,
 				81D0398E2B4DC36F007BB5A2 /* CreateVC.swift in Sources */,
+				B199C4762B9F7BF5001C7126 /* CreateVC1.swift in Sources */,
 				81E536B82B77F12100123F1D /* validatorVC.swift in Sources */,
 				81BBAB922B950FD1009DFD11 /* WalletCell.swift in Sources */,
 				81CC5CE12B78D803000B458E /* Send.swift in Sources */,

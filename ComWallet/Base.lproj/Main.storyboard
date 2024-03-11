@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -143,144 +142,6 @@
             </objects>
             <point key="canvasLocation" x="650.72463768115949" y="43.526785714285715"/>
         </scene>
-        <!--CreateVC1-->
-        <scene sceneID="OZ7-GZ-4eW">
-            <objects>
-                <viewController storyboardIdentifier="CreateVC1" title="CreateVC1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k0y-Lh-WhB" customClass="CreateVC" customModule="ComWallet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ek2-Ah-ogX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZP-fa-OPR">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TjT-f7-c4U">
-                                        <rect key="frame" x="20" y="285" width="374" height="300"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="374" id="MSz-0R-Yvx"/>
-                                            <constraint firstAttribute="height" constant="300" id="tKC-zm-7pl"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I4J-ha-hxd">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ZGX-zM-vFz" customClass="CollectionCell" customModule="ComWallet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lbF-An-2a5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FH-sC-X3A">
-                                                            <rect key="frame" x="43.5" y="54" width="41.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="7FH-sC-X3A" firstAttribute="centerX" secondItem="lbF-An-2a5" secondAttribute="centerX" id="5mw-7P-tRf"/>
-                                                        <constraint firstItem="7FH-sC-X3A" firstAttribute="centerY" secondItem="lbF-An-2a5" secondAttribute="centerY" id="T4y-Tc-Wao"/>
-                                                    </constraints>
-                                                </collectionViewCellContentView>
-                                                <connections>
-                                                    <outlet property="myLabel" destination="7FH-sC-X3A" id="HUX-US-Fcd"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="k0y-Lh-WhB" id="saZ-m2-zBi"/>
-                                            <outlet property="delegate" destination="k0y-Lh-WhB" id="stF-cq-TYH"/>
-                                        </connections>
-                                    </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ays-ca-4kC">
-                                        <rect key="frame" x="144" y="644" width="126" height="60"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="JXf-Nl-Bey"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Create Wallet">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="importAction:" destination="k0y-Lh-WhB" eventType="touchUpInside" id="WDe-n0-4tx"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is your mnemonic seed phrase , do not show anyone and backup" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2l3-P8-47O">
-                                        <rect key="frame" x="20" y="46" width="374" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFF-dP-2Op">
-                                        <rect key="frame" x="116" y="0.0" width="182.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="labelColor"/>
-                                <constraints>
-                                    <constraint firstItem="TjT-f7-c4U" firstAttribute="centerX" secondItem="lZP-fa-OPR" secondAttribute="centerX" id="3bG-eS-fxX"/>
-                                    <constraint firstItem="Ays-ca-4kC" firstAttribute="centerX" secondItem="TjT-f7-c4U" secondAttribute="centerX" id="7PO-1a-fec"/>
-                                    <constraint firstItem="eFF-dP-2Op" firstAttribute="centerX" secondItem="lZP-fa-OPR" secondAttribute="centerX" id="CAo-Jr-cnG"/>
-                                    <constraint firstItem="2l3-P8-47O" firstAttribute="centerX" secondItem="lZP-fa-OPR" secondAttribute="centerX" id="GXU-fk-3Fv"/>
-                                    <constraint firstItem="TjT-f7-c4U" firstAttribute="centerY" secondItem="lZP-fa-OPR" secondAttribute="centerY" constant="28" id="Mqj-Xw-QZ4"/>
-                                    <constraint firstItem="eFF-dP-2Op" firstAttribute="top" secondItem="lZP-fa-OPR" secondAttribute="top" id="an3-Pt-fQ5"/>
-                                    <constraint firstItem="Ays-ca-4kC" firstAttribute="top" secondItem="TjT-f7-c4U" secondAttribute="bottom" constant="59" id="gN1-qk-gzz"/>
-                                    <constraint firstItem="2l3-P8-47O" firstAttribute="top" secondItem="eFF-dP-2Op" secondAttribute="bottom" constant="10" id="oI5-4Y-a1Z"/>
-                                    <constraint firstItem="2l3-P8-47O" firstAttribute="leading" secondItem="lZP-fa-OPR" secondAttribute="leading" constant="20" id="vr7-k3-6Dn"/>
-                                    <constraint firstAttribute="trailing" secondItem="2l3-P8-47O" secondAttribute="trailing" constant="20" id="ycx-bS-SPw"/>
-                                </constraints>
-                            </view>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="tsk-8Q-FgT">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="6t3-G4-yTR"/>
-                                    <constraint firstAttribute="height" constant="100" id="CLC-jU-pay"/>
-                                </constraints>
-                            </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show my mnemonic seed phrase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1T-CC-bw3">
-                                <rect key="frame" x="56.5" y="510" width="301.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="af2-Dm-Pfr"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
-                        <constraints>
-                            <constraint firstItem="h1T-CC-bw3" firstAttribute="top" secondItem="tsk-8Q-FgT" secondAttribute="bottom" constant="12" id="4Ao-XM-zLc"/>
-                            <constraint firstItem="tsk-8Q-FgT" firstAttribute="centerY" secondItem="ek2-Ah-ogX" secondAttribute="centerY" id="5so-dT-MqD"/>
-                            <constraint firstItem="lZP-fa-OPR" firstAttribute="top" secondItem="af2-Dm-Pfr" secondAttribute="top" id="6BA-Dr-Hh7"/>
-                            <constraint firstItem="lZP-fa-OPR" firstAttribute="trailing" secondItem="af2-Dm-Pfr" secondAttribute="trailing" id="7g2-74-vvr"/>
-                            <constraint firstItem="tsk-8Q-FgT" firstAttribute="centerX" secondItem="ek2-Ah-ogX" secondAttribute="centerX" id="aiU-kM-Y9a"/>
-                            <constraint firstItem="af2-Dm-Pfr" firstAttribute="bottom" secondItem="lZP-fa-OPR" secondAttribute="bottom" id="cv5-iD-NRA"/>
-                            <constraint firstItem="h1T-CC-bw3" firstAttribute="centerX" secondItem="ek2-Ah-ogX" secondAttribute="centerX" id="sc5-oq-gNp"/>
-                            <constraint firstItem="lZP-fa-OPR" firstAttribute="leading" secondItem="af2-Dm-Pfr" secondAttribute="leading" id="xvO-1g-RTl"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="TjT-f7-c4U" id="mmu-i7-ppi"/>
-                        <outlet property="eyeImg" destination="tsk-8Q-FgT" id="mqh-b8-Hxi"/>
-                        <outlet property="mainView" destination="lZP-fa-OPR" id="bGS-wk-S82"/>
-                        <outlet property="mnemonicLabel" destination="h1T-CC-bw3" id="IXT-Zz-qHy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hir-A2-ylP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2371.0144927536235" y="726.5625"/>
-        </scene>
         <!--ValidatorVC-->
         <scene sceneID="XKr-Q5-eua">
             <objects>
@@ -389,7 +250,6 @@
     </scenes>
     <resources>
         <image name="Commune" width="258" height="202"/>
-        <image name="eye" width="110" height="92"/>
         <image name="micro" width="16" height="16"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
