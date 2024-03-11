@@ -47,7 +47,17 @@ struct ResponseData: Decodable {
 
 class ViewController: UIViewController {
 
+        
     @IBOutlet weak var transactionsTable: UITableView!
+    
+    
+    // MARK: - Constructor
+    static func ViewController() -> ViewController{
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "ViewController") as! ViewController
+        return view
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         transactionsTable.dataSource = self
@@ -65,7 +75,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func createWallet(_ sender: Any) {
-        self.navigationController?.pushViewController(CreateVC.CreateVC(), animated: true)
+        print("creating")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CreateVC1") as! CreateVC
+         navigationController?.pushViewController(vc,
+         animated: true)
+
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let vc = storyboard.instantiateViewController(withIdentifier: "CreateVC") as! CreateVC
 //         navigationController?.pushViewController(vc,
@@ -77,10 +92,8 @@ class ViewController: UIViewController {
        // fetchJSONData()
       //  importWallet()
        // createPolkadotWallet()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CreateVC1") as! CreateVC
-         navigationController?.pushViewController(vc,
-         animated: true)
+        self.navigationController?.pushViewController(CreateVC.CreateVC(), animated: true)
+
     }
  
     func createPolkadotWallet() {
@@ -296,4 +309,26 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     
+}
+
+
+extension UIView {
+
+  @IBInspectable var borderWidth: CGFloat {
+    get {
+        return layer.borderWidth
+    }
+    set {
+        layer.borderWidth = newValue
+    }
+  }
+
+  @IBInspectable var borderColor: UIColor? {
+    get {
+        return UIColor(cgColor: layer.borderColor!)
+    }
+    set {
+        layer.borderColor = newValue?.cgColor
+    }
+  }
 }

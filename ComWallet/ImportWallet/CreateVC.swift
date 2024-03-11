@@ -104,7 +104,7 @@ class CreateVC: UIViewController {
 //        eyeImg.isHidden = false
 //        mainView.alpha = 0.3
 //        mnemonicLabel.isHidden = false
-        self.navigationController?.pushViewController(ReceiveVC.ReceiveVC(), animated: true)
+        self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
     }
     
     @IBAction func importWallet(_ sender: Any) {

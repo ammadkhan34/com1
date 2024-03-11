@@ -26,9 +26,9 @@
 		A3458EE5EA206C26AC97AEDF /* Pods_ComWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3594428E03AAD86B8A20F2AA /* Pods_ComWallet.framework */; };
 		B11D08E62B98A8FC008B33C5 /* send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11D08E52B98A8FC008B33C5 /* send.storyboard */; };
 		B14F55872B96C87900529049 /* CreateVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F55862B96C87900529049 /* CreateVC.storyboard */; };
-		B14F558A2B96C92200529049 /* DetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F55892B96C92200529049 /* DetailsVC.storyboard */; };
 		B14F558D2B96C9B500529049 /* unStackVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F558C2B96C9B500529049 /* unStackVC.storyboard */; };
 		B14F55902B96CA3B00529049 /* stackVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F558F2B96CA3B00529049 /* stackVC.storyboard */; };
+		B179D5552B9F32DF007626EA /* DetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B179D5542B9F32DF007626EA /* DetailsVC.storyboard */; };
 		B1F0837F2B99E42300AD5E21 /* ReceiveVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F0837E2B99E42300AD5E21 /* ReceiveVC.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -56,9 +56,9 @@
 		81E536B72B77F12100123F1D /* validatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validatorVC.swift; sourceTree = "<group>"; };
 		B11D08E52B98A8FC008B33C5 /* send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = send.storyboard; sourceTree = "<group>"; };
 		B14F55862B96C87900529049 /* CreateVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateVC.storyboard; sourceTree = "<group>"; };
-		B14F55892B96C92200529049 /* DetailsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsVC.storyboard; sourceTree = "<group>"; };
 		B14F558C2B96C9B500529049 /* unStackVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = unStackVC.storyboard; sourceTree = "<group>"; };
 		B14F558F2B96CA3B00529049 /* stackVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = stackVC.storyboard; sourceTree = "<group>"; };
+		B179D5542B9F32DF007626EA /* DetailsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsVC.storyboard; sourceTree = "<group>"; };
 		B1F0837E2B99E42300AD5E21 /* ReceiveVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReceiveVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +104,8 @@
 		81D039722B4D9195007BB5A2 /* ComWallet */ = {
 			isa = PBXGroup;
 			children = (
+				B179D5502B9F3261007626EA /* createWallet */,
+				B179D54F2B9F324E007626EA /* ImportWallet */,
 				B1F0837D2B99E40400AD5E21 /* ReceiveVc */,
 				B11D08E42B98A8E9008B33C5 /* send */,
 				B14F558E2B96CA2200529049 /* stakeVC */,
@@ -137,8 +139,6 @@
 		B14F55852B96C85500529049 /* CreateVC */ = {
 			isa = PBXGroup;
 			children = (
-				81D0398D2B4DC36F007BB5A2 /* CreateVC.swift */,
-				B14F55862B96C87900529049 /* CreateVC.storyboard */,
 			);
 			path = CreateVC;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				81BDD8E72B5003800043333F /* DetailsVC.swift */,
-				B14F55892B96C92200529049 /* DetailsVC.storyboard */,
+				B179D5542B9F32DF007626EA /* DetailsVC.storyboard */,
 			);
 			path = DetailsVC;
 			sourceTree = "<group>";
@@ -168,6 +168,22 @@
 				B14F558F2B96CA3B00529049 /* stackVC.storyboard */,
 			);
 			path = stakeVC;
+			sourceTree = "<group>";
+		};
+		B179D54F2B9F324E007626EA /* ImportWallet */ = {
+			isa = PBXGroup;
+			children = (
+				81D0398D2B4DC36F007BB5A2 /* CreateVC.swift */,
+				B14F55862B96C87900529049 /* CreateVC.storyboard */,
+			);
+			path = ImportWallet;
+			sourceTree = "<group>";
+		};
+		B179D5502B9F3261007626EA /* createWallet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = createWallet;
 			sourceTree = "<group>";
 		};
 		B1F0837D2B99E40400AD5E21 /* ReceiveVc */ = {
@@ -252,10 +268,10 @@
 				B14F55872B96C87900529049 /* CreateVC.storyboard in Resources */,
 				81BBAB932B950FD1009DFD11 /* WalletCell.xib in Resources */,
 				B14F558D2B96C9B500529049 /* unStackVC.storyboard in Resources */,
+				B179D5552B9F32DF007626EA /* DetailsVC.storyboard in Resources */,
 				81D039802B4D9198007BB5A2 /* LaunchScreen.storyboard in Resources */,
 				B11D08E62B98A8FC008B33C5 /* send.storyboard in Resources */,
 				81D0397D2B4D9198007BB5A2 /* Assets.xcassets in Resources */,
-				B14F558A2B96C92200529049 /* DetailsVC.storyboard in Resources */,
 				81D0397B2B4D9195007BB5A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

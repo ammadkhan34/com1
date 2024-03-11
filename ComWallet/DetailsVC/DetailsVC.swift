@@ -9,6 +9,15 @@ import UIKit
 
 class DetailsVC: UIViewController {
 
+    
+    // MARK: - Constructor
+    static func DetailsVC() -> DetailsVC{
+        let storyboard = UIStoryboard.init(name: "DetailsVC", bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: "DetailsVC") as! DetailsVC
+        return view
+    }
+
+    
     @IBOutlet weak var stackedBalance: UILabel!
     @IBOutlet weak var totalBalance: UILabel!
     @IBOutlet var optionsView: UIView!
