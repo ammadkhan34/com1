@@ -12,4 +12,7 @@ pod 'Substrate'
 pod 'Substrate-RPC'
 # Keychain
 pod 'Substrate-Keychain'
+
+#pod 'RealmSwift'
+
 end

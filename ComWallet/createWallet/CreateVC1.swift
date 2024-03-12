@@ -11,6 +11,7 @@ import SubstrateRPC
 import Bip39
 import CoreImage.CIFilterBuiltins
 import SubstrateKeychain
+import RealmSwift
 
 
 
@@ -18,6 +19,7 @@ class CreateVC1: UIViewController {
     let reuseIdentifier = "cell"
     var items = ["secret", "secret", "secret", "secret", "secret", "secret", "secret", "secret", "secret","secret", "secret", "secret"]
     var phrase = [""]
+    var wallet_address = ""
     static func CreateVC1() -> CreateVC1{
         let storyboard = UIStoryboard.init(name: "CreateVC1", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "CreateVC1") as! CreateVC1
@@ -65,19 +67,24 @@ class CreateVC1: UIViewController {
         collectionView.reloadData()
     }
     
-    @IBAction func sendVc(_ sender: Any) {
+
+    @IBAction func importAction(_ sender: Any)
+    {
+        let wallet_addreess = WalletAddresses()
+        wallet_addreess.Address = wallet_address
+        wallet_addreess.mnemonic.append(objectsIn: phrase)
+        print("name of dog: \(wallet_addreess.Address )" , wallet_addreess.mnemonic)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Send") as! Send
-         navigationController?.pushViewController(vc,
-         animated: true)
-    }
-    
-    @IBAction func importAction(_ sender: Any) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(wallet_addreess)
+        }
+
+
         self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
     }
     
-    }
+}
 
 
 extension CreateVC1 {
@@ -87,7 +94,7 @@ extension CreateVC1 {
                     return
                 }
         
-        
+        print("TESING???? ???? ////" , mnemonic)
         print("Mnemonic is", mnemonic.mnemonic())
         phrase = mnemonic.mnemonic()
 
@@ -98,7 +105,8 @@ extension CreateVC1 {
                // Generate a new key pair using Substrate
                let keyPair = try Sr25519KeyPair(seed: seed)
                let address = try keyPair.publicKey.ss58(format: .substrate)
-             print(address)
+               wallet_address = address
+               print(address)
                showAlert(message: "Your Polkadot wallet address is \(address)")
            } catch {
                // Handle error
