@@ -140,7 +140,12 @@ extension AnyCall: RuntimeEncodable {
                                            got: palletCall.type.description,
                                            reason: "Expected Variant", .get())
         }
+        print("Name got is: ",calls[0].name)
+        print("Name orignally is: " , name)
+        
         guard let call = calls.first(where: {$0.name == name}) else {
+          //  print("Name got is: ",calls[0].name)
+            print("Name orignally 1 is: " , name)
             throw FrameTypeError.typeInfoNotFound(for: errorTypeName, .get())
         }
         guard call.fields.count == _params.count else {
