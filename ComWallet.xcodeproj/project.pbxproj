@@ -29,6 +29,8 @@
 		B14F55872B96C87900529049 /* CreateVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F55862B96C87900529049 /* CreateVC.storyboard */; };
 		B14F558D2B96C9B500529049 /* unStackVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F558C2B96C9B500529049 /* unStackVC.storyboard */; };
 		B14F55902B96CA3B00529049 /* stackVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F558F2B96CA3B00529049 /* stackVC.storyboard */; };
+		B1791E4D2BA0B27E00BF7523 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B1791E4C2BA0B27E00BF7523 /* Realm */; };
+		B1791E4F2BA0B27E00BF7523 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1791E4E2BA0B27E00BF7523 /* RealmSwift */; };
 		B179D5552B9F32DF007626EA /* DetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B179D5542B9F32DF007626EA /* DetailsVC.storyboard */; };
 		B199C4742B9F7A82001C7126 /* CreateVC1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B199C4732B9F7A82001C7126 /* CreateVC1.storyboard */; };
 		B199C4762B9F7BF5001C7126 /* CreateVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199C4752B9F7BF5001C7126 /* CreateVC1.swift */; };
@@ -73,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1791E4F2BA0B27E00BF7523 /* RealmSwift in Frameworks */,
+				B1791E4D2BA0B27E00BF7523 /* Realm in Frameworks */,
 				A3458EE5EA206C26AC97AEDF /* Pods_ComWallet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +234,10 @@
 			dependencies = (
 			);
 			name = ComWallet;
+			packageProductDependencies = (
+				B1791E4C2BA0B27E00BF7523 /* Realm */,
+				B1791E4E2BA0B27E00BF7523 /* RealmSwift */,
+			);
 			productName = ComWallet;
 			productReference = 81D039702B4D9195007BB5A2 /* ComWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +266,9 @@
 				Base,
 			);
 			mainGroup = 81D039672B4D9195007BB5A2;
+			packageReferences = (
+				B1791E4B2BA0B27E00BF7523 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 81D039712B4D9195007BB5A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -568,6 +579,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1791E4B2BA0B27E00BF7523 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1791E4C2BA0B27E00BF7523 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1791E4B2BA0B27E00BF7523 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		B1791E4E2BA0B27E00BF7523 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1791E4B2BA0B27E00BF7523 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 81D039682B4D9195007BB5A2 /* Project object */;
 }
