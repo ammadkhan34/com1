@@ -109,14 +109,14 @@ class CreateVC: UIViewController {
             print("=======\nTransfer Transaction\n=======")
 
             // Root key pair with developer test phrase
-            let rootKeyPair = try Sr25519KeyPair(phrase: DEFAULT_DEV_PHRASE)
+            let rootKeyPair = try Sr25519KeyPair(phrase: "finger wedding quantum struggle boost there prosper man liar spin split saddle")
 
             // Derived key for Alice
           //  let from = try Sr25519KeyPair(phrase: "")
             // Derived key for Bob
           //  let bob = try rootKeyPair.derive(path: [PathComponent(string: "/Bob")])
             // Obtain address from PublicKey
-            let to = try api.runtime.address(ss58: DEFAULT_DEV_ADDRESS)
+            let to = try api.runtime.address(ss58: "5CQJhWFyZSeUZrPhRR8eaYo3Ab6W3Q5XuC4QdE5odX4Scvt6")
 
             // Create transaction for balance transfer
             let call = AnyCall(name: "transfer_allow_death",
