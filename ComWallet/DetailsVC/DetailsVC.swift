@@ -45,7 +45,7 @@ class DetailsVC: UIViewController {
         }
     
     func fetchJSONData() {
-        guard let url = URL(string: "https://api.comstats.org/balance/?wallet=5GZBhMZZRMWCiqgqdDGZCGo16Kg5aUQUcpuUGWwSgHn9HbRC") else {
+        guard let url = URL(string: "https://api.comstats.org/balance/?wallet=\(wallet_address)") else {
             return
         }
 
@@ -57,16 +57,16 @@ class DetailsVC: UIViewController {
             guard let data = data else {
                 return
             }
-print("Data is", data)
-            print("Response is", response)
+            //print("Data is", data)
+//            print("Response is", response)
             do {
                         let responseData = try JSONDecoder().decode(ResponseData.self, from: data)
                 
-                print("Balance is ", responseData)
+//                print("Balance is ", responseData)
 
                 DispatchQueue.main.async {
                     self.totalBalance.text = String(responseData.balance ?? 0)
-                    self.stackedBalance.text = String(responseData.staked ?? 0)
+                    self.stackedBalance.text = String(responseData.staked ?? 0) + " com"
                 }
              
                     } catch {

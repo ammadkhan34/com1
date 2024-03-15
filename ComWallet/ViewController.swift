@@ -308,16 +308,20 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
        
         let cell:WalletCell = transactionsTable.dequeueReusableCell(withIdentifier: "WalletCell") as! WalletCell
         cell.walletaddress.text = wallet_address[indexPath.row]
-        cell.walletnumber.text = "Wallet #\(indexPath.row+1)"
+        cell.walletnumber.text = "Wallet \(indexPath.row+1):"
         
         return cell
-//
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "WalletCell", for: indexPath) as? WalletCell {
-//            cell.walletaddress = wallet_address[indexPath.row]
-//            return cell
-//        }
-//        return UITableViewCell()
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let realm = try! Realm()
+        let info = realm.objects(WalletAddresses.self)
+        self.navigationController?.pushViewController(DetailsVC.DetailsVC(wallet_address: info[indexPath.row].Address, wallet_mnemonic: info[indexPath.row].mnemonic.map { $0 }), animated: true)
+    }
+
+
+    
     
     func get_offline_data_count() -> Int {
         let realm = try! Realm()
@@ -332,13 +336,10 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func get_wallet_addresses() -> [String] {
         let realm = try! Realm()
         let info = realm.objects(WalletAddresses.self)
-        
         var addresses: [String] = []
         for walletAddress in info {
-            print(info)
             addresses.append(walletAddress.Address)
         }
-        
         return addresses
     }
 

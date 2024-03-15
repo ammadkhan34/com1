@@ -63,11 +63,23 @@
                             <constraint firstItem="Y0P-Su-ybX" firstAttribute="top" secondItem="wMf-Dp-mAg" secondAttribute="bottom" constant="20" id="u8u-Bx-TxC"/>
                             <constraint firstAttribute="trailing" secondItem="WBP-kA-GGo" secondAttribute="trailing" constant="15" id="wVQ-Iv-1LF"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="LG0-EV-b7w" secondAttribute="trailing" id="3Q3-Ux-Afg"/>
                     <constraint firstAttribute="bottom" secondItem="LG0-EV-b7w" secondAttribute="bottom" id="7fv-YQ-98h"/>
+                    <constraint firstItem="LG0-EV-b7w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="EOu-SY-r8E"/>
                     <constraint firstItem="LG0-EV-b7w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NDG-FZ-uRg"/>
                     <constraint firstItem="LG0-EV-b7w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="o5S-qR-q9I"/>
                 </constraints>

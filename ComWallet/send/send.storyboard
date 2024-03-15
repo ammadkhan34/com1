@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,8 +42,8 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEz-hU-ODq">
-                                <rect key="frame" x="161.33333333333334" y="89" width="70.333333333333343" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEz-hU-ODq">
+                                <rect key="frame" x="20" y="89" width="353" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -128,6 +128,8 @@
                             <constraint firstItem="FEz-hU-ODq" firstAttribute="centerX" secondItem="ctn-iv-RCV" secondAttribute="centerX" id="9de-tW-M3R"/>
                             <constraint firstItem="FEz-hU-ODq" firstAttribute="top" secondItem="OvQ-33-vw3" secondAttribute="top" constant="30" id="ALf-Bj-Wqu"/>
                             <constraint firstItem="OvQ-33-vw3" firstAttribute="trailing" secondItem="SOP-rS-dLM" secondAttribute="trailing" constant="30" id="EZq-0d-yVi"/>
+                            <constraint firstItem="OvQ-33-vw3" firstAttribute="trailing" secondItem="FEz-hU-ODq" secondAttribute="trailing" constant="20" id="Eef-UT-Xb9"/>
+                            <constraint firstItem="FEz-hU-ODq" firstAttribute="leading" secondItem="OvQ-33-vw3" secondAttribute="leading" constant="20" id="Hog-Tg-bAb"/>
                             <constraint firstItem="SOP-rS-dLM" firstAttribute="leading" secondItem="OvQ-33-vw3" secondAttribute="leading" constant="30" id="KhP-Wq-dES"/>
                             <constraint firstItem="G3f-20-EZ2" firstAttribute="centerX" secondItem="ctn-iv-RCV" secondAttribute="centerX" id="QqW-31-Hdb"/>
                             <constraint firstItem="sQM-Eq-jnA" firstAttribute="leading" secondItem="OvQ-33-vw3" secondAttribute="leading" constant="60" id="Svu-2O-qO1"/>
