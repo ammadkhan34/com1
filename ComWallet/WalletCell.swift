@@ -9,6 +9,11 @@ import UIKit
 
 class WalletCell: UITableViewCell {
 
+    
+    @IBOutlet weak var walletaddress: UILabel!
+    
+    @IBOutlet weak var walletnumber: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

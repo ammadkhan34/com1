@@ -9,11 +9,15 @@ import UIKit
 
 class DetailsVC: UIViewController {
 
+    var wallet_address = ""
+    var wallet_mnemonic:[String] = []
     
     // MARK: - Constructor
-    static func DetailsVC() -> DetailsVC{
+    static func DetailsVC(wallet_address:String,wallet_mnemonic:[String]) -> DetailsVC{
         let storyboard = UIStoryboard.init(name: "DetailsVC", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "DetailsVC") as! DetailsVC
+        view.wallet_address = wallet_address
+        view.wallet_mnemonic = wallet_mnemonic
         return view
     }
 

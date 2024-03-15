@@ -90,25 +90,16 @@ class CreateVC: UIViewController {
 
 extension CreateVC{
     func importWallet() {
+        var mnemonic_phrase = [word1?.text, word2?.text, word3?.text, word4?.text, word5?.text, word6?.text, word7?.text, word8?.text, word9?.text, word10?.text, word11?.text, word12?.text].compactMap { $0 ?? "" }
+
+
        do {
-           
-           let seed = Data(try Mnemonic(mnemonic: [    word1?.text ?? "",
-                                                       word2?.text ?? "",
-                                                       word3?.text ?? "",
-                                                       word4?.text ?? "",
-                                                       word5?.text ?? "",
-                                                       word6?.text ?? "",
-                                                       word7?.text ?? "",
-                                                       word8?.text ?? "",
-                                                       word9?.text ?? "",
-                                                       word10?.text ?? "",
-                                                       word11?.text ?? "",
-                                                       word12?.text ?? ""], wordlist: .english).substrate_seed())
+           let seed = Data(try Mnemonic(mnemonic: mnemonic_phrase, wordlist: .english).substrate_seed())
            // Generate a new key pair using Substrate
            let keyPair = try Sr25519KeyPair(seed: seed)
            let address = try keyPair.publicKey.ss58(format: .substrate)
          print(address)
-           self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
+           self.navigationController?.pushViewController(DetailsVC.DetailsVC(wallet_address: address, wallet_mnemonic: mnemonic_phrase), animated: true)
            showAlert(message: "Your Polkadot wallet address is \(address)")
        } catch {
            // Handle error

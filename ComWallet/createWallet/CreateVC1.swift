@@ -81,7 +81,7 @@ class CreateVC1: UIViewController {
         }
 
 
-        self.navigationController?.pushViewController(DetailsVC.DetailsVC(), animated: true)
+        self.navigationController?.pushViewController(DetailsVC.DetailsVC(wallet_address: wallet_address,wallet_mnemonic: phrase), animated: true)
     }
     
 }

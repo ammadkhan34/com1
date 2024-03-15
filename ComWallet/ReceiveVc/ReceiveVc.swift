@@ -11,8 +11,6 @@ class ReceiveVC: UIViewController {
 
     @IBOutlet weak var qrImage: UIImageView!
     
-    
-    
     static func ReceiveVC() -> ReceiveVC{
         let storyboard = UIStoryboard.init(name: "ReceiveVC", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "ReceiveVC") as! ReceiveVC

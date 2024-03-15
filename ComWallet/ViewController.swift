@@ -11,6 +11,7 @@ import SubstrateRPC
 import Bip39
 import CoreImage.CIFilterBuiltins
 import SubstrateKeychain
+import RealmSwift
 struct Validator: Decodable {
     let id: String?
     let name: String?
@@ -299,17 +300,48 @@ extension UIView {
 
 extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        get_offline_data_count()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "WalletCell", for: indexPath) as? WalletCell {
-            return cell
-        }
-        return UITableViewCell()
+        let wallet_address = get_wallet_addresses()
+       
+        let cell:WalletCell = transactionsTable.dequeueReusableCell(withIdentifier: "WalletCell") as! WalletCell
+        cell.walletaddress.text = wallet_address[indexPath.row]
+        cell.walletnumber.text = "Wallet #\(indexPath.row+1)"
+        
+        return cell
+//
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: "WalletCell", for: indexPath) as? WalletCell {
+//            cell.walletaddress = wallet_address[indexPath.row]
+//            return cell
+//        }
+//        return UITableViewCell()
     }
     
+    func get_offline_data_count() -> Int {
+        let realm = try! Realm()
+        let info = realm.objects(WalletAddresses.self)
+        if !info.isEmpty {
+            return info.count
+        } else {
+            return 0 // or any other default value you want
+        }
+    }
     
+    func get_wallet_addresses() -> [String] {
+        let realm = try! Realm()
+        let info = realm.objects(WalletAddresses.self)
+        
+        var addresses: [String] = []
+        for walletAddress in info {
+            print(info)
+            addresses.append(walletAddress.Address)
+        }
+        
+        return addresses
+    }
+
 }
 
 
