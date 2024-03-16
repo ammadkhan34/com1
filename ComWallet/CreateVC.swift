@@ -104,7 +104,7 @@ class CreateVC: UIViewController {
             print("Initialization...")
 
             // Api instance for local node with Dynamic config and RPC client.
-            let api = try await Api(rpc: client, config: .dynamicBlake2)
+            let api = try await Api(rpc: client, config: .substrate)
 
             print("=======\nTransfer Transaction\n=======")
 
@@ -121,7 +121,7 @@ class CreateVC: UIViewController {
             // Create transaction for balance transfer
             let call = AnyCall(name: "transfer_allow_death",
                                pallet: "Balances",
-                               params: ["dest": to, "value": 0])
+                               params: ["dest": to, "value": 1])
 
             // Create Submittable (transaction) from the call
             let tx = try await api.tx.new(call)

@@ -17,6 +17,9 @@ public extension AnyTypeDefinition {
     @inlinable
     func validate(for: String, as type: TypeDefinition) -> Result<Void, TypeError>
     {
+        print("My object id is", objectId)
+        print("Your object id is", type.objectId)
+
         // Maybe we trying to validate the same object
         if objectId == type.objectId { return .success(()) }
         // Nope. Let's validate

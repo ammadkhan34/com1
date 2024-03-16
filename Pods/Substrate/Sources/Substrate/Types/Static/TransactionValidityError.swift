@@ -73,6 +73,10 @@ public enum TransactionValidityError: StaticCallError, Equatable, Swift.Codable,
     
     @inlinable
     public static func definition(in registry: TypeRegistry<TypeDefinition.TypeId>) -> TypeDefinition.Builder {
+        print("Unknown is", registry.def(UnknownTransaction.self) )
+        print("invalid is", registry.def(UnknownTransaction.self) )
+
+        return
         .variant(variants: [
             .s(0, "Invalid", registry.def(InvalidTransaction.self)),
             .s(1, "Unknown", registry.def(UnknownTransaction.self))
