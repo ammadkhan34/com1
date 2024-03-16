@@ -95,99 +95,138 @@ class CreateVC: UIViewController {
         
         let seed = Data(dat)
         do {
-            
-            let client = JsonRpcClient(.ws(url: URL(string: "wss://westend-rpc.polkadot.io")!,
-                                           maximumMessageSize: 16*1024*1024)) // 16 Mb messages
-            // Enable if you want to see rpc request logs
-            // client.debug = true
+            let nodeUrl = URL(string: "wss://westend-rpc.polkadot.io")!
 
-            print("Initialization...")
+            // Dynamic Config should work for almost all Substrate based networks.
+            // It's not most eficient though because uses a lot of dynamic types
+            let substrate = try await Api(
+                rpc: JsonRpcClient(.ws(url: nodeUrl)),
+                config: .dynamicBlake2
+            )
+            // Create KeyPair for signing
+            let mnemonic = "finger wedding quantum struggle boost there prosper man liar spin split saddle"
+            let from = try Sr25519KeyPair(parsing: mnemonic + "//Key1") // hard key derivation
 
-            // Api instance for local node with Dynamic config and RPC client.
-            let api = try await Api(rpc: client, config: .substrate)
+            // Create recipient address from ss58 string
+            let to = try substrate.runtime.address(ss58: "5G4STBkaZ3mzcqW9NGFwcCgoCN8L1SioJ1HLHGKAZWBN1gAU")
 
-            print("=======\nTransfer Transaction\n=======")
-
-            // Root key pair with developer test phrase
-            let rootKeyPair = try Sr25519KeyPair(phrase: "finger wedding quantum struggle boost there prosper man liar spin split saddle")
-
-            // Derived key for Alice
-          //  let from = try Sr25519KeyPair(phrase: "")
-            // Derived key for Bob
-          //  let bob = try rootKeyPair.derive(path: [PathComponent(string: "/Bob")])
-            // Obtain address from PublicKey
-            let to = try api.runtime.address(ss58: "5CQJhWFyZSeUZrPhRR8eaYo3Ab6W3Q5XuC4QdE5odX4Scvt6")
-
-            // Create transaction for balance transfer
+            // Dynamic Call type with Map parameters.
+            // any ValueRepresentable type can be used as parameter
             let call = AnyCall(name: "transfer_allow_death",
                                pallet: "Balances",
                                params: ["dest": to, "value": 1])
 
             // Create Submittable (transaction) from the call
-            let tx = try await api.tx.new(call)
+            let tx = try await substrate.tx.new(call)
+
+            // We are using direct signer API here
+            // Or we can set Keychain as signer in Api and provide `account` parameter
+            // `waitForFinalized()` will wait for block finalization
+            // `waitForInBlock()` will wait for inBlock status
+            // `success()` will search for failed event and throw in case of failure
+            let events = try await tx.signSendAndWatch(signer: from)
+                    .waitForFinalized()
+                    .success()
+
+            // `parsed()` will dynamically parse all extrinsic events.
+            // Check `ExtrinsicEvents` struct for more efficient search methods.
+            print("Events: \(try events.parsed())")
             
-          //  let tx = try await api.tx.balances.transferAllowDeath(dest: to,
-                                                          //        value: 15483812850)
-
-            // Sign it and submit. Wait for success
-            let events = try await tx.signSendAndWatch(signer: rootKeyPair)
-                .waitForInBlock()
-                .success()
-
-//            let withdraw = try events.balances.withdraw.first
-//            let success = try events.system.extrinsicSuccess.first
+            
+            
+            
+//            let client = JsonRpcClient(.ws(url: URL(string: "wss://westend-rpc.polkadot.io")!,
+//                                           maximumMessageSize: 16*1024*1024)) // 16 Mb messages
+//            // Enable if you want to see rpc request logs
+//            // client.debug = true
 //
-//            print("Success event: \(success!)")
-//            print("Withdraw event: \(withdraw!)")
-
-            // All events
-            for event in try events.parsed() {
-                print(event)
-            }
-
-            print("=======\nEnd of Transfer Transaction\n=======\n")
-//            let nodeUrl = URL(string: "wss://westend-rpc.polkadot.io")!
-//            
-//            // Dynamic Config should work for almost all Substrate based networks.
-//            // It's not most efficient though because it uses a lot of dynamic types
-//            let substrate = try await Api(
-//                rpc: JsonRpcClient(.ws(url: nodeUrl)),
-//                config: .dynamicBlake2
-//            )
-//            let mnemonic = "floor spoil truly assist naive gauge dice race device absurd crater soup"
-//            let from = try Sr25519KeyPair(phrase: mnemonic,wordlist: .english) // hard key derivation
-//            
-//            // Create recipient address from ss58 string
-//            let to = try substrate.runtime.address(ss58: "5G4STBkaZ3mzcqW9NGFwcCgoCN8L1SioJ1HLHGKAZWBN1gAU")
-//            
-//            // Dynamic Call type with Map parameters.
-//            // any ValueRepresentable type can be used as parameter
-//            let call = AnyCall(name: "transfer",
+//            print("Initialization...")
+//
+//            // Api instance for local node with Dynamic config and RPC client.
+//            let api = try await Api(rpc: client, config: .substrate)
+//
+//            print("=======\nTransfer Transaction\n=======")
+//
+//            // Root key pair with developer test phrase
+//            let rootKeyPair = try Sr25519KeyPair(phrase: "finger wedding quantum struggle boost there prosper man liar spin split saddle")
+//
+//            // Derived key for Alice
+//          //  let from = try Sr25519KeyPair(phrase: "")
+//            // Derived key for Bob
+//          //  let bob = try rootKeyPair.derive(path: [PathComponent(string: "/Bob")])
+//            // Obtain address from PublicKey
+//            let to = try api.runtime.address(ss58: "5CQJhWFyZSeUZrPhRR8eaYo3Ab6W3Q5XuC4QdE5odX4Scvt6")
+//
+//            // Create transaction for balance transfer
+//            let call = AnyCall(name: "transfer_allow_death",
 //                               pallet: "Balances",
-//                               params: ["dest": to, "value": 0])
-//            
+//                               params: ["dest": to, "value": 1])
+//
 //            // Create Submittable (transaction) from the call
-//            let tx = try await substrate.tx.new(call)
+//            let tx = try await api.tx.new(call)
 //            
-//            // We are using direct signer API here
-//            // Or we can set Keychain as signer in Api and provide `account` parameter
-//            // `waitForFinalized()` will wait for block finalization
-//            // `waitForInBlock()` will wait for inBlock status
-//            // `success()` will search for failed event and throw in case of failure
-//            
-//            
-//            
-//            let events = try await tx.signSendAndWatch(signer: from)
-//                .waitForFinalized()
+//          //  let tx = try await api.tx.balances.transferAllowDeath(dest: to,
+//                                                          //        value: 15483812850)
+//
+//            // Sign it and submit. Wait for success
+//            let events = try await tx.signSendAndWatch(signer: rootKeyPair)
+//                .waitForInBlock()
 //                .success()
-//            
-//            // `parsed()` will dynamically parse all extrinsic events.
-//            // Check `ExtrinsicEvents` struct for more efficient search methods.
-//            
-//            
-//            print("Events: \(try events.parsed())")
-//            
-//            
+//
+////            let withdraw = try events.balances.withdraw.first
+////            let success = try events.system.extrinsicSuccess.first
+////
+////            print("Success event: \(success!)")
+////            print("Withdraw event: \(withdraw!)")
+//
+//            // All events
+//            for event in try events.parsed() {
+//                print(event)
+//            }
+//
+//            print("=======\nEnd of Transfer Transaction\n=======\n")
+////            let nodeUrl = URL(string: "wss://westend-rpc.polkadot.io")!
+////            
+////            // Dynamic Config should work for almost all Substrate based networks.
+////            // It's not most efficient though because it uses a lot of dynamic types
+////            let substrate = try await Api(
+////                rpc: JsonRpcClient(.ws(url: nodeUrl)),
+////                config: .dynamicBlake2
+////            )
+////            let mnemonic = "floor spoil truly assist naive gauge dice race device absurd crater soup"
+////            let from = try Sr25519KeyPair(phrase: mnemonic,wordlist: .english) // hard key derivation
+////            
+////            // Create recipient address from ss58 string
+////            let to = try substrate.runtime.address(ss58: "5G4STBkaZ3mzcqW9NGFwcCgoCN8L1SioJ1HLHGKAZWBN1gAU")
+////            
+////            // Dynamic Call type with Map parameters.
+////            // any ValueRepresentable type can be used as parameter
+////            let call = AnyCall(name: "transfer",
+////                               pallet: "Balances",
+////                               params: ["dest": to, "value": 0])
+////            
+////            // Create Submittable (transaction) from the call
+////            let tx = try await substrate.tx.new(call)
+////            
+////            // We are using direct signer API here
+////            // Or we can set Keychain as signer in Api and provide `account` parameter
+////            // `waitForFinalized()` will wait for block finalization
+////            // `waitForInBlock()` will wait for inBlock status
+////            // `success()` will search for failed event and throw in case of failure
+////            
+////            
+////            
+////            let events = try await tx.signSendAndWatch(signer: from)
+////                .waitForFinalized()
+////                .success()
+////            
+////            // `parsed()` will dynamically parse all extrinsic events.
+////            // Check `ExtrinsicEvents` struct for more efficient search methods.
+////            
+////            
+////            print("Events: \(try events.parsed())")
+////            
+////            
             
         } catch {
             // Handle any errors here
