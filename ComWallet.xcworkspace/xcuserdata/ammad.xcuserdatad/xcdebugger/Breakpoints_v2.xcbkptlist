@@ -135,22 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B84AB122-C2DD-4D6D-A72B-6E2AD9095D56"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/Client.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "anyRequestError"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4C1EC9DD-569C-4602-A0B3-12EC259D09D8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -162,36 +146,6 @@
             endingLineNumber = "23"
             landmarkName = "mapEnvelope(method:params:response:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4C1EC9DD-569C-4602-A0B3-12EC259D09D8 - f738e6b77ccc83a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (JsonRPC.ResponseEnvelope&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;) -&gt; Swift.Result&lt;&#x3c4;_1_0, JsonRPC.RequestError&lt;&#x3c4;_1_1, &#x3c4;_1_2&gt;&gt; in static JsonRPC.ServiceCore.mapEnvelope&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2&gt;(method: Swift.String, params: &#x3c4;_1_1, response: Swift.Result&lt;JsonRPC.ResponseEnvelope&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;, JsonRPC.CodecError&gt;) -&gt; Swift.Result&lt;&#x3c4;_1_0, JsonRPC.RequestError&lt;&#x3c4;_1_1, &#x3c4;_1_2&gt;&gt;"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Service/ServiceCore+Coding.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24">
-               </Location>
-               <Location
-                  uuid = "4C1EC9DD-569C-4602-A0B3-12EC259D09D8 - f738e6b77ccc8389"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (JsonRPC.ResponseEnvelope&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;) -&gt; Swift.Result&lt;&#x3c4;_1_0, JsonRPC.RequestError&lt;&#x3c4;_1_1, &#x3c4;_1_2&gt;&gt; in static JsonRPC.ServiceCore.mapEnvelope&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2&gt;(method: Swift.String, params: &#x3c4;_1_1, response: Swift.Result&lt;JsonRPC.ResponseEnvelope&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;, JsonRPC.CodecError&gt;) -&gt; Swift.Result&lt;&#x3c4;_1_0, JsonRPC.RequestError&lt;&#x3c4;_1_1, &#x3c4;_1_2&gt;&gt;"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Service/ServiceCore+Coding.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -213,47 +167,95 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E024383-9AE0-4D4D-B698-30EB25C0CD88"
+            uuid = "1A6C4937-D426-431C-B0D9-0729A530B414"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
+            filePath = "Pods/Substrate/Sources/Substrate/Extrinsic/Transaction/ExtrinsicProgress.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "call(method:params:_:_:response:)"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "waitForFinalized()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D02D4385-AA80-4E15-9A5B-2B5A7BE82DAA"
+            uuid = "E14BAF94-48F7-49F5-88A0-42FCE161B45B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
+            filePath = "Pods/Substrate/Sources/Substrate/Extrinsic/Transaction/ExtrinsicProgress.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "call(method:params:_:_:response:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "waitForFinalizedHash()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B71B16C7-4E0C-4AA7-9408-AA334D0CC4CD"
+            uuid = "AE424F26-B076-4AC7-9596-DC67631A76E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Substrate/Sources/Substrate/Extrinsic/Transaction/ExtrinsicProgress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "waitForFinalizedHash()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "191E2E5F-AF4E-45F9-B9BE-2A063EB9ECF2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Substrate/Sources/Substrate/Extrinsic/Transaction/ExtrinsicProgress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "waitForFinalizedHash()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACF10A9A-8E99-42BD-884C-6B61946E7319"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/ServiceCore+Coding.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "mapEnvelope(method:params:response:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B437F07D-2098-40E4-BDE2-D9F8848E3A67"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "call(id:encoded:response:deserializer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -261,107 +263,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0F52FA2-5658-49EA-80CA-55E96EEE0446"
+            uuid = "87B52613-FB70-45F5-926D-E5433E592B7C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "call(id:encoded:response:deserializer:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F0F52FA2-5658-49EA-80CA-55E96EEE0446 - 3a49512b2db907b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JsonRPC.ServiceCore&lt; where &#x3c4;_0_0: JsonRPC.PersistentConnection&gt;.call&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2&gt;(id: Swift.UInt32, encoded: Swift.Result&lt;Foundation.Data, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;, response: (Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; (), deserializer: (Foundation.Data) -&gt; Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; ()"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "F0F52FA2-5658-49EA-80CA-55E96EEE0446 - 34f0718c461e51b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Foundation.Data) -&gt; () in JsonRPC.ServiceCore&lt; where &#x3c4;_0_0: JsonRPC.PersistentConnection&gt;.call&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2&gt;(id: Swift.UInt32, encoded: Swift.Result&lt;Foundation.Data, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;, response: (Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; (), deserializer: (Foundation.Data) -&gt; Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; ()"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "624736DD-0BC0-483D-9698-B207248310E4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "call(id:encoded:response:deserializer:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "624736DD-0BC0-483D-9698-B207248310E4 - 34f0718c461e578"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Foundation.Data) -&gt; () in JsonRPC.ServiceCore&lt; where &#x3c4;_0_0: JsonRPC.PersistentConnection&gt;.call&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2&gt;(id: Swift.UInt32, encoded: Swift.Result&lt;Foundation.Data, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;, response: (Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; (), deserializer: (Foundation.Data) -&gt; Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; ()"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
-               </Location>
-               <Location
-                  uuid = "624736DD-0BC0-483D-9698-B207248310E4 - 80b9f56ad975a1d4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable () -&gt; () in closure #2 (Foundation.Data) -&gt; () in JsonRPC.ServiceCore&lt; where &#x3c4;_0_0: JsonRPC.PersistentConnection&gt;.call&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2&gt;(id: Swift.UInt32, encoded: Swift.Result&lt;Foundation.Data, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;, response: (Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; (), deserializer: (Foundation.Data) -&gt; Swift.Result&lt;&#x3c4;_1_1, JsonRPC.RequestError&lt;&#x3c4;_1_0, &#x3c4;_1_2&gt;&gt;) -&gt; ()"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "999664F7-6A20-4C3D-8FDB-5994BA54A8C0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "call(id:encoded:response:deserializer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -369,158 +279,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "734A778F-9860-47A5-86FD-76E436E44EC5"
+            uuid = "45137B88-6A97-4F56-B701-305D7B185FF7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Service/PersistentClient.swift"
+            filePath = "ComWallet/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "call(id:encoded:response:deserializer:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CAA14035-C34C-410E-8D7B-476EDB9A524E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "send(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4E6F9CF2-353B-4DE2-BF4C-A0A7B3B1DFB3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "send(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33DD717F-5CFB-4588-9249-1AF4D18C506A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "sendNext(state:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "32F4B584-99FB-4344-9620-68E8EFABA90E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "sendNext(state:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4892014A-C03E-4D26-86DD-F2A2D0CCC327"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "sendNext(state:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ECD2B7B4-40EE-4CBE-AC23-141FA428D024"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "sendNext(state:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ECD2B7B4-40EE-4CBE-AC23-141FA428D024 - 9b77aa2d36a750ef"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in JsonRPC.WsConnection.sendNext(state: inout JsonRPC.WsConnection.State) -&gt; ()"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "183"
-                  endingLineNumber = "183">
-               </Location>
-               <Location
-                  uuid = "ECD2B7B4-40EE-4CBE-AC23-141FA428D024 - 6707e5a0b84fd563"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (inout JsonRPC.WsConnection.State) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in JsonRPC.WsConnection.sendNext(state: inout JsonRPC.WsConnection.State) -&gt; ()"
-                  moduleName = "JsonRPC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ammad/Desktop/School%20Work/com1/Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "179"
-                  endingLineNumber = "179">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF7ED52F-B0DE-46C1-A894-9913168B18D4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/JsonRPC.swift/Sources/JsonRPC/Connection/WsConnection.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "sendNext(state:)"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "faceID(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
