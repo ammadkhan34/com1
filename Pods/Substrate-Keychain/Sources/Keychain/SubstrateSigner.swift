@@ -50,6 +50,8 @@ public extension KeyPair {
         do {
             try runtime.extrinsicManager.encode(payload: payload, in: &encoder, runtime: runtime)
         } catch {
+            print(error)
+            print(error.localizedDescription)
             return .failure(.badPayload(error: error.localizedDescription))
         }
         let signature = sign(tx: encoder.output)

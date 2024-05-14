@@ -11,6 +11,7 @@ import SubstrateRPC
 import Bip39
 import CoreImage.CIFilterBuiltins
 import SubstrateKeychain
+import LocalAuthentication
 struct Validator: Decodable {
     let id: String?
     let name: String?
@@ -112,6 +113,8 @@ class ViewController: UIViewController {
  
     
     
+  
+  
     
     
     
@@ -148,7 +151,10 @@ class ViewController: UIViewController {
 //           try keychain.set(privateKeyData, key: "privateKey")
 //       }
        
-       func showAlert(message: String) {
+    @IBAction func faceID(_ sender: Any) {
+ 
+    }
+    func showAlert(message: String) {
            let alertController = UIAlertController(title: "Polkadot Wallet Created", message: message, preferredStyle: .alert)
            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
            present(alertController, animated: true, completion: nil)

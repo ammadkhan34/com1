@@ -84,9 +84,12 @@ open class ExtendedRuntime<RC: Config>: BasicRuntime<RC> {
     public func validate<T: ValidatableTypeStatic>(type: T.Type, info: DynamicTypes.Maybe<TypeDefinition>,
                                                    isStatic: Bool) throws
     {
+        debugPrint("Info is ", info)
         switch info {
         case .success(let info): try type.validate(as: info, in: self).get()
-        case .failure(let err): guard isStatic else { throw err }
+        case .failure(let err): guard isStatic else { 
+            print("Error got is", err)
+            throw err }
         }
     }
 }

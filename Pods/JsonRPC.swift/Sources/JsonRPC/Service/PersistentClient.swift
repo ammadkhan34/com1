@@ -22,7 +22,7 @@ public extension ServiceCore where Connection: PersistentConnection {
         
         let debug = self.debug
         if debug { print("Request[\(id)]: \(String(data: data, encoding: .utf8) ?? "<error>")") }
-        
+        print("Request[\(id)]: \(String(data: data, encoding: .utf8) )")
         register(id: id) { data in
             let response = deserializer(data)
             self.queue.async { callback(response) }
@@ -40,7 +40,8 @@ public extension ServiceCore where Connection: PersistentConnection {
         
         let decoder = self.decoder
         call(id: id, encoded: encoded, response: callback) { data in
-            Self.deserialize(data: data, decoder: decoder, method: method, params: params, Res.self, Err.self)
+            print("Data returned is", data)
+           return  Self.deserialize(data: data, decoder: decoder, method: method, params: params, Res.self, Err.self)
         }
     }
     

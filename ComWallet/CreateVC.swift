@@ -11,7 +11,12 @@ import SubstrateRPC
 import Bip39
 import CoreImage.CIFilterBuiltins
 import SubstrateKeychain
+import SubstrateKeychain
+import VideoSubscriberAccount
 import UIKit
+import Substrate
+import LocalAuthentication
+
 //
 //class CreateVC: UIViewController {
 //    let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
@@ -73,7 +78,8 @@ class CreateVC: UIViewController {
             eyeImg.addGestureRecognizer(tapGesture)
         }
         else {
-            createPolkadotWallet()
+            //sendFunds()
+           // createPolkadotWallet()
         }
          
        
@@ -84,7 +90,244 @@ class CreateVC: UIViewController {
                 navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
           // Do any additional setup after loading the view.
       }
+    
+    
+//    func testQueryFeeDetails() {
+//        runAsyncTest(withTimeout: 30) {
+//            let from = self.env.fundedKeyPairs.someElement()!
+//            let toKp = self.env.keyPairs.someElement(without: [from])!
+//            let substrate = try await Api(rpc: self.httpClient, config: .dynamicBlake2)
+//            let to = try toKp.address(in: substrate)
+//            let call = AnyCall(name: "transfer_allow_death",
+//                               pallet: "Balances",
+//                               params: ["dest": to, "value": 15483812856])
+//            let tx = try await substrate.tx.new(call)
+//            let _ = try await tx.feeDetails(account: from.pubKey)
+//        }
+//    }
+    
     // ... Other code ...
+    
+    
+    func sendFunds(amount: Int = 1 ) async throws {
+        do {
+            let client = JsonRpcClient(.ws(url: URL(string: "wss://westend-rpc.polkadot.io")!)) // Use the appropriate WebSocket URL for your network
+
+            print("Initialization...")
+
+            // API instance for the target node with Dynamic config and RPC client.
+            let api = try await Api(rpc: client, config: .dynamicBlake2)
+         
+            print("=======\nTransfer Transaction\n=======")
+
+            
+            
+            // We can check does node have needed runtime call
+            guard api.call.has(method: "versions", api: "Metadata") else {
+              fatalError("Node doesn't have needed call")
+            }
+
+            // Array<UInt32> is a return value for the call
+            // AnyValueRuntimeCall can be used for dynamic return parsing
+            
+            let call1 = AnyRuntimeCall<[UInt32]>(api: "Metadata",
+                                                method: "versions")
+
+            // Will parse vall result to Array<UInt32>
+            let versions = try await api.call.execute(call: call1)
+
+            print("Supported metadata versions: \(versions)")
+            
+            // Root key pair with your mnemonic phrase
+//            let mnemonic = "finger wedding quantum struggle boost there prosper man liar spin split saddle"
+//            let rootKeyPair = try Sr25519KeyPair(phrase: mnemonic)
+            let rootKeyPair = try Sr25519KeyPair(phrase: "finger wedding quantum struggle boost there prosper man liar spin split saddle")
+            let alice = try rootKeyPair.derive(path: [PathComponent(string: "/Ammad2")])
+            // Derived key for Bob
+            let bob = try rootKeyPair.derive(path: [PathComponent(string: "/Bob")])
+            
+            // Derived key for the sender (you can choose any derivation path as per your setup)
+            let sender = try rootKeyPair.derive(path: [PathComponent(string: "/Ammad2")])
+
+            // Recipient address (you need to replace the SS58 address with the recipient's address)
+            let recipientSS58Address = "5CQJhWFyZSeUZrPhRR8eaYo3Ab6W3Q5XuC4QdE5odX4Scvt6"
+            let recipient = try bob.address(in: api)
+
+            // Dynamic call for transfer
+            let call = AnyCall(name: "transfer_allow_death",
+                               pallet: "Balances",
+                               params: ["dest": recipient, "value": 0]) // Set the value you want to transfer
+
+            // Create a new transaction from the call
+            let tx = try await api.tx.new(call)
+
+            // Sign and submit the transaction. Wait for success
+            let events = try await tx.signSendAndWatch(signer: alice)
+                .waitForInBlock()
+                .success()
+
+            // Parsed events
+            for event in try events.parsed() {
+                print(event)
+            }
+
+            print("=======\nEnd of Transfer Transaction\n=======\n")
+        }
+        catch {
+            // Handle any errors here
+            print("Error: \(error)")
+        }
+        
+    }
+
+    
+    func sendFunds1() async {
+        
+        let dat: [UInt8] = [184, 122, 210, 33, 84, 52, 221, 227, 47, 93, 29, 201, 51, 199, 206, 206, 143, 102, 208, 237, 74, 85, 177, 200, 41, 189, 176, 71, 250, 4, 94, 12, 64, 161, 170, 207, 132, 24, 98, 199, 83, 129, 121, 45, 41, 182, 65, 246, 131, 123, 246, 224, 47, 13, 114, 174, 94, 119, 93, 127, 238, 36, 121, 212]
+        
+        let seed = Data(dat)
+        do {
+            let nodeUrl = URL(string: "wss://westend-rpc.polkadot.io")!
+
+            // Dynamic Config should work for almost all Substrate based networks.
+            // It's not most eficient though because uses a lot of dynamic types
+            let substrate = try await Api(
+                rpc: JsonRpcClient(.ws(url: nodeUrl)),
+                config: .dynamicBlake2
+            )
+            // Create KeyPair for signing
+            let mnemonic = "finger wedding quantum struggle boost there prosper man liar spin split saddle"
+            let from = try Sr25519KeyPair(parsing: mnemonic + "//Ammad2") // hard key derivation
+
+            // Create recipient address from ss58 string
+            let to = try substrate.runtime.address(ss58: "5G4STBkaZ3mzcqW9NGFwcCgoCN8L1SioJ1HLHGKAZWBN1gAU")
+
+            // Dynamic Call type with Map parameters.
+            // any ValueRepresentable type can be used as parameter
+            let bas = 1/10
+            let call = AnyCall(name: "transfer_allow_death",
+                               pallet: "Balances",
+                               params: ["dest": to, "value": bas])
+
+            // Create Submittable (transaction) from the call
+            let tx = try await substrate.tx.new(call)
+            // We are using direct signer API here
+            // Or we can set Keychain as signer in Api and provide `account` parameter
+            // `waitForFinalized()` will wait for block finalization
+            // `waitForInBlock()` will wait for inBlock status
+            // `success()` will search for failed event and throw in case of failure
+          
+            print("Public key is ",from.publicKey)
+            let events = try await tx.signSendAndWatch(signer: from).waitForFinalized().success()
+//            let events = try await tx.signSendAndWatch(signer: from)
+//                    .waitForFinalized()
+//                    .success()
+
+            // `parsed()` will dynamically parse all extrinsic events.
+            // Check `ExtrinsicEvents` struct for more efficient search methods.
+            print("Events: \(try events)")
+            
+            
+            
+            
+//            let client = JsonRpcClient(.ws(url: URL(string: "wss://westend-rpc.polkadot.io")!,
+//                                           maximumMessageSize: 16*1024*1024)) // 16 Mb messages
+//            // Enable if you want to see rpc request logs
+//            // client.debug = true
+//
+//            print("Initialization...")
+//
+//            // Api instance for local node with Dynamic config and RPC client.
+//            let api = try await Api(rpc: client, config: .substrate)
+//
+//            print("=======\nTransfer Transaction\n=======")
+//
+//            // Root key pair with developer test phrase
+//            let rootKeyPair = try Sr25519KeyPair(phrase: "finger wedding quantum struggle boost there prosper man liar spin split saddle")
+//
+//            // Derived key for Alice
+//          //  let from = try Sr25519KeyPair(phrase: "")
+//            // Derived key for Bob
+//          //  let bob = try rootKeyPair.derive(path: [PathComponent(string: "/Bob")])
+//            // Obtain address from PublicKey
+//            let to = try api.runtime.address(ss58: "5CQJhWFyZSeUZrPhRR8eaYo3Ab6W3Q5XuC4QdE5odX4Scvt6")
+//
+//            // Create transaction for balance transfer
+//            let call = AnyCall(name: "transfer_allow_death",
+//                               pallet: "Balances",
+//                               params: ["dest": to, "value": 1])
+//
+//            // Create Submittable (transaction) from the call
+//            let tx = try await api.tx.new(call)
+//            
+//          //  let tx = try await api.tx.balances.transferAllowDeath(dest: to,
+//                                                          //        value: 15483812850)
+//
+//            // Sign it and submit. Wait for success
+//            let events = try await tx.signSendAndWatch(signer: rootKeyPair)
+//                .waitForInBlock()
+//                .success()
+//
+////            let withdraw = try events.balances.withdraw.first
+////            let success = try events.system.extrinsicSuccess.first
+////
+////            print("Success event: \(success!)")
+////            print("Withdraw event: \(withdraw!)")
+//
+//            // All events
+//            for event in try events.parsed() {
+//                print(event)
+//            }
+//
+//            print("=======\nEnd of Transfer Transaction\n=======\n")
+////            let nodeUrl = URL(string: "wss://westend-rpc.polkadot.io")!
+////            
+////            // Dynamic Config should work for almost all Substrate based networks.
+////            // It's not most efficient though because it uses a lot of dynamic types
+////            let substrate = try await Api(
+////                rpc: JsonRpcClient(.ws(url: nodeUrl)),
+////                config: .dynamicBlake2
+////            )
+////            let mnemonic = "floor spoil truly assist naive gauge dice race device absurd crater soup"
+////            let from = try Sr25519KeyPair(phrase: mnemonic,wordlist: .english) // hard key derivation
+////            
+////            // Create recipient address from ss58 string
+////            let to = try substrate.runtime.address(ss58: "5G4STBkaZ3mzcqW9NGFwcCgoCN8L1SioJ1HLHGKAZWBN1gAU")
+////            
+////            // Dynamic Call type with Map parameters.
+////            // any ValueRepresentable type can be used as parameter
+////            let call = AnyCall(name: "transfer",
+////                               pallet: "Balances",
+////                               params: ["dest": to, "value": 0])
+////            
+////            // Create Submittable (transaction) from the call
+////            let tx = try await substrate.tx.new(call)
+////            
+////            // We are using direct signer API here
+////            // Or we can set Keychain as signer in Api and provide `account` parameter
+////            // `waitForFinalized()` will wait for block finalization
+////            // `waitForInBlock()` will wait for inBlock status
+////            // `success()` will search for failed event and throw in case of failure
+////            
+////            
+////            
+////            let events = try await tx.signSendAndWatch(signer: from)
+////                .waitForFinalized()
+////                .success()
+////            
+////            // `parsed()` will dynamically parse all extrinsic events.
+////            // Check `ExtrinsicEvents` struct for more efficient search methods.
+////            
+////            
+////            print("Events: \(try events.parsed())")
+////            
+////            
+            
+        } catch {
+            // Handle any errors here
+            print("Error: \(error)")
+        }
+    }
 
     func createPolkadotWallet() {
        // importWallet(<#T##Any#>)
@@ -128,12 +371,15 @@ var i = 0
         mainView.alpha = 1.0
         mnemonicLabel.isHidden = true
     }
+    
     @IBAction func sendVc(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Send") as! Send
-         navigationController?.pushViewController(vc,
-         animated: true)
+        Task { @MainActor in
+             try await sendFunds()
+            //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //        let vc = storyboard.instantiateViewController(withIdentifier: "Send") as! Send
+            //         navigationController?.pushViewController(vc,
+            //         animated: true)
+        }
     }
     
     @IBAction func importAction(_ sender: Any) {

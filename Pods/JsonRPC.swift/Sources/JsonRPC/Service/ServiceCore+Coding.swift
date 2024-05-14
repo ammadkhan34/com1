@@ -19,6 +19,7 @@ extension ServiceCore {
                      guard let error = envelope.error else {
                          return .failure(.empty)
                      }
+                     print("Error to be printed is", error, method, params)
                      return .failure(.reply(method: method, params: params, error: error))
                  }
                  return .success(data)
@@ -41,6 +42,7 @@ extension ServiceCore {
         method: String, params: Params, _ res: Res.Type, _ err: Err.Type
     ) -> Result<Res, RequestError<Params, Err>> {
         let envelope = decoder.tryDecode(ResponseEnvelope<Res, Err>.self, from: data)
+        print(envelope)
         return mapEnvelope(method: method, params: params, response: envelope)
     }
     

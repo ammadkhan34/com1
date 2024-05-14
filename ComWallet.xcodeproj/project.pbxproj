@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		816F83A92BB0D5470006CF70 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F83A82BB0D5470006CF70 /* FirstViewController.swift */; };
 		81BBAB922B950FD1009DFD11 /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBAB902B950FD1009DFD11 /* WalletCell.swift */; };
 		81BBAB932B950FD1009DFD11 /* WalletCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BBAB912B950FD1009DFD11 /* WalletCell.xib */; };
 		81BDD8E82B5003800043333F /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDD8E72B5003800043333F /* DetailsVC.swift */; };
@@ -32,6 +33,7 @@
 		3594428E03AAD86B8A20F2AA /* Pods_ComWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6870530D427DA8288ABA0DE0 /* Pods-ComWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComWallet.release.xcconfig"; path = "Target Support Files/Pods-ComWallet/Pods-ComWallet.release.xcconfig"; sourceTree = "<group>"; };
 		7C11EC07FBF2BA494CC7D80A /* Pods-ComWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComWallet.debug.xcconfig"; path = "Target Support Files/Pods-ComWallet/Pods-ComWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		816F83A82BB0D5470006CF70 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		81BBAB902B950FD1009DFD11 /* WalletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCell.swift; sourceTree = "<group>"; };
 		81BBAB912B950FD1009DFD11 /* WalletCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCell.xib; sourceTree = "<group>"; };
 		81BDD8E72B5003800043333F /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				81BBAB912B950FD1009DFD11 /* WalletCell.xib */,
 				81DF142F2B976268008B9C76 /* TransactionCell.swift */,
 				81DF14302B976268008B9C76 /* TransactionCell.xib */,
+				816F83A82BB0D5470006CF70 /* FirstViewController.swift */,
 			);
 			path = ComWallet;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				81CC5CE12B78D803000B458E /* Send.swift in Sources */,
 				81D039762B4D9195007BB5A2 /* SceneDelegate.swift in Sources */,
 				81D039882B4DC214007BB5A2 /* CollectionCell.swift in Sources */,
+				816F83A92BB0D5470006CF70 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
