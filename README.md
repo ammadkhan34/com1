@@ -1,11 +1,16 @@
 Com Crypto App
+
 Welcome to Com, a sophisticated crypto application meticulously crafted to provide seamless management of "Com," a Polkadot-based currency, with advanced security features and an intuitive user experience.
+
 Overview
+
 Com is a cutting-edge iOS Swift application designed for users seeking a secure and user-friendly platform for managing Com cryptocurrency transactions. With a focus on robust security measures and elegant design, Com offers a comprehensive solution for both novice and experienced crypto enthusiasts.
 Features
+
 New Additions
 	•	Enhanced Security: Utilize Face Login for advanced biometric authentication, ensuring your Com transactions are secure.
 	•	Revamped Design: Immerse yourself in our redesigned user interface, offering a seamless and visually appealing experience.
+
 Core Functionality
 	•	Effortless Transactions: Generate bar codes effortlessly for streamlined Com transaction processes.
 	•	APIs Integration: Seamlessly integrate with APIs for real-time data access and enhanced functionality.
@@ -14,6 +19,7 @@ Core Functionality
 	•	Transaction Management: Effortlessly oversee and manage Com currency transactions with precision.
 	•	Stake/Unstake Features: Empower users with the ability to stake and unstake Com assets with ease.
 	•	Secure Authentication Mechanisms: Ensure robust security with authentication via mnemonic and s58 address protocols.
+
 Architecture
 	•	VIP (View Interactor Presenter): Our app follows the VIP architecture pattern, which separates concerns and promotes clean, testable, and maintainable code.
 Principles
