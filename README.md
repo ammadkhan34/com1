@@ -74,5 +74,19 @@ External Resources
 
     •	Substrate Integration Guide: Explore comprehensive integration possibilities with Substrate tools using Sidecar endpoints. Substrate Documentation
     Support
+    
+Some Useful Links are
+
+Design 
+
+1: https://xd.adobe.com/view/51d939e4-33a3-47de-82c3-08c003c380a5-048a/screen/8132d361-07ea-4e93-ab90-05f6fea50ab9/
+
+Wallet Creation
+
+2: https://docs.substrate.io/tutorials/integrate-with-tools/explore-sidecar-endpoints/
+
 
 For any inquiries or assistance, please contact our support team at abdum352022@gmail.com.
+
+
+
